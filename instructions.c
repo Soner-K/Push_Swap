@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:31:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 15:31:19 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:34:38 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	pb(d_node **store, d_node **push)
 }
 
 /*Shift up all the nodes of stack A once*/
-void	ra(d_node **stack_a) // juste un swap entre premier et dernier? ??
+void	ra(d_node **stack_a) // juste passer le premier en dernier et c bon ?
 {
 	d_node	*tmp;
 	d_node	*first;
