@@ -6,54 +6,35 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:24:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/20 18:51:11 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:28:22 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct s_list
-{
-	int				data;
-	struct s_list	*prev;
-	struct s_list	*next;
-}					t_list;
-
-t_list	*ft_lstnew(int data)
-{
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->prev = NULL;
-	new->next = NULL;
-	return (new);
-}
-
-void	add_node(t_list **node, t_list *insert)
-{
-	if (!(*node) || !insert)
-		return ;
-	insert->next = (*node)->next;
-	(*node)->next = insert;
-	insert->prev = (*node);
-}
+#include "push_swap.h" 
 
 int	main(void)
 {
-	t_list *tmp;
-	t_list *first;
+	d_node *tmp;
+	d_node *first;
+	int		i;
 
-	tmp = malloc(sizeof(t_list));
-	tmp->data = 1;
+	tmp = malloc(sizeof(d_node));
+	tmp->data = -1;
 	first = tmp;
+	i = 0;
 
 	tmp->prev = NULL;
-	add_node(&tmp, ft_lstnew(2));
-	add_node(&tmp, ft_lstnew(3));
+	// add_node(&tmp, ft_lstnew(2));
+	// add_node(&(tmp->next), ft_lstnew(3)); //tmp->next sinon aucun lien entre node 2 et 3
+	while (i < 11)
+	{
+		add_node(&tmp, ft_lstnew(i));
+		tmp = tmp->next;
+		i++;
+	}
+	tmp = first;
 	while (tmp)
 	{
 		printf("%d -> ", tmp->data);
@@ -62,8 +43,6 @@ int	main(void)
 		tmp = tmp->next;
 	}
 	printf("\n");
-	printf("%d", tmp->data);
-	printf("\n");
 	while (tmp)
 	{
 		printf("%d -> ", tmp->data);
@@ -71,5 +50,5 @@ int	main(void)
 			break ;
 		tmp = tmp->prev;
 	}
-	printf("%d", tmp->data);
+	clear_list(&first);
 }
