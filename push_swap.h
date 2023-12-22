@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 12:29:19 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:32:35 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,10 @@ typedef struct s_node
 d_node				*ft_lstnew(int data);
 void				add_node(d_node **node, d_node *insert);
 void				clear_list(d_node **node);
-
+d_node				*ft_lstlast(d_node *node);
+void				ra(d_node **stack_a);
+void				pa(d_node **store, d_node **push);
+void				ss(d_node **first_a, d_node **first_b);
+void				sb(d_node **first_b);
+void				sa(d_node **first_a);
 #endif

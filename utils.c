@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:28:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 14:16:08 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:47:50 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,15 @@ void	clear_list(d_node **node) // incorporer un free en parcourant prev?
 		free(*node);
 		(*node) = tmp;
 	}
+}
+
+d_node	*ft_lstlast(d_node *node)
+{
+	if (!node)
+		return (NULL);
+	while (node->next)
+	{
+		node = node->next;
+	}
+	return (node);
 }

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:31:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 15:34:38 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:31:07 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,28 +66,30 @@ void	pb(d_node **store, d_node **push)
 void	ra(d_node **stack_a) // juste passer le premier en dernier et c bon ?
 {
 	d_node	*tmp;
-	d_node	*first;
-	
-	first = *stack_a;
-	while (*stack_a)
-	{
-		tmp = (*stack_a);
-	}
+
+	tmp = *stack_a;
+	(*stack_a)->prev = ft_lstlast(*stack_a);
+	ft_lstlast(*stack_a)->next = tmp;
+	tmp->next = NULL;
 }
 
-int	main(void)
-{
-	d_node	*tst;
-	d_node	*tst2;
+// int	main(void)
+// {
+// 	d_node	*tst;
+// 	d_node	*tst2;
+// 	d_node	*first;
+
+// 	tst = ft_lstnew(0);
+// 	tst->next = ft_lstnew(1);
+// 	first = tst;
+// 	tst2 = ft_lstnew(1450);
 	
-	tst = ft_lstnew(0);
-	tst->next = ft_lstnew(1);
-	tst2 = ft_lstnew(1450);
-	
-	printf("TST DATA\n%d\n", tst->data);
-	pa(&tst, &tst2);
-	printf("TST DATA\n%d\n", tst->data);
-	pb(&tst2, &tst);
-	printf("TST2 DATA\n%d\n", tst2->data);
-	printf("TST DATA\n%d\n", tst->data);
-}
+// 	printf("TST DATA\n%d\n", tst->data);
+// 	pa(&tst, &tst2);
+// 	printf("TST DATA\n%d\n", tst->data);
+// 	pb(&tst2, &tst);
+// 	printf("TST2 DATA\n%d\n", tst2->data);
+// 	printf("TST DATA\n%d\n", tst->data);
+// 	printf("last node %d\n", (ft_lstlast(first))->data);
+// 	printf("node first %d\n", first->data);
+// }

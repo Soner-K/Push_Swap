@@ -6,28 +6,29 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:24:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 12:28:22 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:35:28 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "push_swap.h" 
 
 int	main(void)
 {
-	d_node *tmp;
-	d_node *first;
+	d_node	*tmp;
+	d_node	*first;
+	d_node	*next;
 	int		i;
 
 	tmp = malloc(sizeof(d_node));
 	tmp->data = -1;
 	first = tmp;
 	i = 0;
-
 	tmp->prev = NULL;
 	// add_node(&tmp, ft_lstnew(2));
-	// add_node(&(tmp->next), ft_lstnew(3)); //tmp->next sinon aucun lien entre node 2 et 3
+	// add_node(&(tmp->next), ft_lstnew(3));
+		//tmp->next sinon aucun lien entre node 2 et 3
 	while (i < 11)
 	{
 		add_node(&tmp, ft_lstnew(i));
@@ -35,6 +36,7 @@ int	main(void)
 		i++;
 	}
 	tmp = first;
+	next = first->next;
 	while (tmp)
 	{
 		printf("%d -> ", tmp->data);
@@ -49,6 +51,17 @@ int	main(void)
 		if (!tmp->prev)
 			break ;
 		tmp = tmp->prev;
+	}
+	tmp = first;
+	ra(&tmp);
+	tmp = first;
+	printf("\n");
+	while (next)
+	{
+		printf("%d -> ", next->data);
+		if (!next->next)
+			break ;
+		next = next->next;
 	}
 	clear_list(&first);
 }
