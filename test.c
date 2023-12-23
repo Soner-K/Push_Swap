@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:24:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/22 19:35:28 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/23 15:43:20 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,25 @@ int	main(void)
 			break ;
 		tmp = tmp->prev;
 	}
-	tmp = first;
 	ra(&tmp);
-	tmp = first;
+	tmp = next;
 	printf("\n");
-	while (next)
+	while (tmp)
 	{
-		printf("%d -> ", next->data);
-		if (!next->next)
+		printf("%d -> ", tmp->data);
+		if (!tmp->next)
 			break ;
-		next = next->next;
+		tmp = tmp->next;
+	}
+	tmp = next;
+	rra(&tmp);
+	printf("\n");
+	while (tmp)
+	{
+		printf("%d -> ", tmp->data);
+		if (!tmp->next)
+			break ;
+		tmp = tmp->next;
 	}
 	clear_list(&first);
 }

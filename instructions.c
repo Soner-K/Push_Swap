@@ -6,84 +6,48 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:31:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/22 19:31:07 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/23 15:42:42 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Swaps the first two elements at the top of the stack A*/
-void	sa(d_node **first_a)
-{
-	int	tmp;
-
-	if (!(*first_a) || !(*first_a)->next)
-		return ;
-	tmp = (*first_a)->data;
-	(*first_a)->data = (*first_a)->next->data;
-	(*first_a)->next->data = tmp;
-}
-
-/* Swaps the first two elements at the top of the stack B*/
-void	sb(d_node **first_b)
-{
-	sa(first_b);
-}
-
-/*Does sa and sb at the same time*/
+/*Does sa and sb at the same time (I'm using ra two times since I use it anyway in rb
+so there's no need to call a function that will call another one when I can
+call it directly).*/
 void	ss(d_node **first_a, d_node **first_b)
 {
 	sa(first_a);
-	sb(first_b);
+	sa(first_b);
 }
 
-/*Pushes the top element of B's stack (push) to the top of A's (store) stack*/
-void	pa(d_node **store, d_node **push)
+/* ra and rb.*/
+void	rr(d_node **first_a, d_node **first_b)
 {
-	d_node	*new_first;
-	d_node	*tmp;
-	
-	if (!(*push))
+	if (!(*first_a) || !(*first_b))
 		return ;
-	new_first = ft_lstnew((*push)->data);
-	if (!new_first)
-		return ;
-	new_first->next = *store;
-	new_first->prev = NULL;
-	*store = new_first;
-	tmp = *push;
-	*push = (*push)->next;
-	free(tmp);	
+	ra(first_a);
+	ra(first_b);
 }
 
-/*Pushes the top element of A's stack (push) to the top of B's (store) (store)*/
-void	pb(d_node **store, d_node **push)
+/*rra and rrb.*/
+void	rrr(d_node **first_a, d_node **first_b)
 {
-	pa(store, push);
-}
-
-/*Shift up all the nodes of stack A once*/
-void	ra(d_node **stack_a) // juste passer le premier en dernier et c bon ?
-{
-	d_node	*tmp;
-
-	tmp = *stack_a;
-	(*stack_a)->prev = ft_lstlast(*stack_a);
-	ft_lstlast(*stack_a)->next = tmp;
-	tmp->next = NULL;
+	rra(first_a);
+	rra(first_b);
 }
 
 // int	main(void)
 // {
-// 	d_node	*tst;
-// 	d_node	*tst2;
-// 	d_node	*first;
+// 	d_node *tst;
+// 	d_node *tst2;
+// 	d_node *first;
 
 // 	tst = ft_lstnew(0);
 // 	tst->next = ft_lstnew(1);
 // 	first = tst;
 // 	tst2 = ft_lstnew(1450);
-	
+
 // 	printf("TST DATA\n%d\n", tst->data);
 // 	pa(&tst, &tst2);
 // 	printf("TST DATA\n%d\n", tst->data);
