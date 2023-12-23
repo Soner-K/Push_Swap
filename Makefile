@@ -4,7 +4,8 @@ SRC			= 	instructions_a.c \
 				parsing.c \
 				test.c \
 				utils.c \
-				utils2.c
+				utils2.c \
+				visualize.c
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 
@@ -12,7 +13,7 @@ CC			=	cc
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-NAME		=	exec
+NAME		=	push_swap
 
 all			:	$(NAME)
 
@@ -26,6 +27,6 @@ clean		:
 				rm -f $(SRC_OBJ) a.out
 
 fclean		:	clean
-				rm -f exec
+				rm -f $(NAME)
 
 re			:	fclean all
