@@ -6,13 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:24:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/23 15:43:20 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/23 15:44:04 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 int	main(void)
 {
