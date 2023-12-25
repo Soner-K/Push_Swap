@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:26:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/23 20:31:33 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:33:05 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,25 @@ void	ft_lstadd_back(d_node **lst, d_node *new)
 	ft_lstlast(*lst)->next = new;
 }
 
-void	print_list(d_node *first_a, d_node *first_b) // à enlever pour la correction
+void	print_list(d_node *first_a, d_node *first_b)
 {
-	if (!first_a && !first_b)
-		return ;
-	while (first_a || first_b)
+	printf("Stack A\t\tStack B\n");
+	while (first_a != NULL || first_b != NULL)
 	{
-		printf("%d\n", first_a->data);
-		first_a = first_a->next;
-		first_b = first_b->next;
+		if (first_a != NULL)
+		{
+			printf("%d\t\t", first_a->data);
+			first_a = first_a->next;
+		}
+		// else
+		// {
+		// 	printf("\t");
+		// }
+		if (first_b != NULL)
+		{
+			printf("%d", first_b->data);
+			first_b = first_b->next;
+		}
+		printf("\n");
 	}
 }

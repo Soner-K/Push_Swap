@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:28:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/23 17:53:16 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/25 18:06:46 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@ d_node	*ft_lstnew(int data)
 	return (new);
 }
 
-void	add_node(d_node **node, d_node *insert)
-{
-	if (!(*node) || !insert)
-		return ;
-	insert->next = (*node)->next;
-	(*node)->next = insert;
-	insert->prev = (*node);
-}
+// void	add_node(d_node **node, d_node *insert)
+// {
+// 	if (!(*node) || !insert)
+// 		return ;
+// 	insert->next = (*node)->next;
+// 	(*node)->next->prev = insert;
+// 	(*node)->next = insert;
+// 	insert->prev = (*node);
+// }
 
 void	clear_list(d_node **node) // incorporer un free en parcourant prev?
 {
@@ -62,5 +63,7 @@ void	ft_lstadd_front(d_node **lst, d_node *new)
 	if (!lst || !new)
 		return ;
 	new->next = *lst;
+	new->prev = NULL; // nécessaire ?
+	(*lst)->prev = new;
 	*lst = new;
 }

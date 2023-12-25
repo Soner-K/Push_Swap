@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/23 20:29:34 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/24 16:44:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void				rrr(d_node **first_a, d_node **first_b);
 long				ft_atol(const char *nptr);
 char				error(char **av);
 
-void				execute(char *str, d_node *stack_a, d_node *stack_b);
+void				execute(char *str, d_node **stack_a, d_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);
 #endif

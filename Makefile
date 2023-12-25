@@ -18,15 +18,17 @@ NAME		=	push_swap
 all			:	$(NAME)
 
 %.o			:	%.c
-				$(CC) $(CFLAGS) -c $< -o $@
+				@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)		:	$(SRC_OBJ)
-				$(CC) $(CFLAGS) $^ -o $@
+				@$(CC) $(CFLAGS) $^ -o $@ -g
 
 clean		:
-				rm -f $(SRC_OBJ) a.out
+				@rm -f $(SRC_OBJ) a.out
 
 fclean		:	clean
-				rm -f $(NAME)
+				@rm -f $(NAME)
+
+tidy		:	$(NAME) clean
 
 re			:	fclean all
