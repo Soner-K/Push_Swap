@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:28:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/25 18:06:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:54:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_lstadd_front(d_node **lst, d_node *new)
 		return ;
 	new->next = *lst;
 	new->prev = NULL; // nécessaire ?
-	(*lst)->prev = new;
+	if (*lst)
+		(*lst)->prev = new;
 	*lst = new;
 }

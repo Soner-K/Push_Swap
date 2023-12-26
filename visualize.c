@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/25 18:16:42 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:07:19 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	execute(char *str, d_node **stack_a, d_node **stack_b)
 		ra(stack_a);
 	if (!ft_strcmp(str, "rb"))
 		rb(stack_b);
-	// if (!ft_strcmp(str, "rr"))
+	// if (!ft_strcmp(str, "rr") && (ft_strcmp(str, "rra") || ft_strcmp(str,
+	// 			"rrb")))
 	// 	rr(stack_a, stack_b);
 	if (!ft_strcmp(str, "rra"))
 		rra(stack_a);
@@ -68,21 +69,23 @@ int	main(int ac, char **av)
 	d_node *stack_a;
 	d_node *stack_b;
 	char str[5];
+	char	*str2;
 
 	str[4] = '\0';
+	str2 = NULL;
 	stack_a = create_list(ac, av);
 	stack_b = malloc(sizeof(d_node));
 	print_list(stack_a, NULL);
 	while (1)
 	{
 		read(1, str, 4);
+		str2 = ft_fuse(str2, str);
 		if (!ft_strcmp(str, "stop"))
 			break ;
 		execute(str, &stack_a, &stack_b);
-		// first_node(&stack_a);
-		// first_node(&stack_b);
 		print_list(stack_a, stack_b);
 	}
+	printf("COMMANDES :\n%s\n", str2);
 	clear_list(&stack_a);
 	clear_list(&stack_b);
 }

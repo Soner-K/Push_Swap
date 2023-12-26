@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:29:11 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/25 19:09:26 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:56:09 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	pa(d_node **store, d_node **push)
 		return ;
 	tmp = *push;
 	*push = (*push)->next;
-	(*push)->prev = NULL;
+	if (*push)
+		(*push)->prev = NULL;
 	ft_lstadd_front(store, tmp);
 }
 
@@ -41,18 +42,10 @@ void	pa(d_node **store, d_node **push)
 the first node to the last position of the stack.*/
 void	ra(d_node **first_node)
 {
-	// d_node	*first;
-
-	// if (!(*first_node))
-	// 	return ;
-	// first = *first_node;
-	// first->prev = ft_lstlast(first);
-	// ft_lstlast(first)->next = first;
-	// *first_node = (*first_node)->next;
-	// (*first_node)->prev = NULL;
-	// first->next = NULL;
 	d_node	*first;
 
+	if (!(*first_node))
+		return ;
 	first = *first_node;
 	ft_lstadd_back(first_node, first);
 	(*first_node) = (*first_node)->next;
@@ -63,7 +56,9 @@ void	ra(d_node **first_node)
 the last node to the first position of the stack.*/
 void	rra(d_node **first_node)
 {
-	d_node	*last_prev;
+	if (!(*first_node))
+		return ;
+	d_node *last_prev;
 
 	last_prev = ft_lstlast(*first_node)->prev;
 	ft_lstadd_front(first_node, ft_lstlast(*first_node));

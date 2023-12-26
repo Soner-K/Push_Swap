@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/24 16:44:26 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:59:41 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void				ft_lstadd_front(d_node **lst, d_node *new);
 void				ft_lstadd_back(d_node **lst, d_node *new);
 d_node				*create_list(int ac, char **av);
 void				print_list(d_node *first_a, d_node *first_b);
+char				*ft_fuse(char *s1, char *s2);
 
 void				sa(d_node **first_a);
 void				sb(d_node **first_b);
