@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/26 18:07:19 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:00:27 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	execute(char *str, d_node **stack_a, d_node **stack_b)
 		ra(stack_a);
 	if (!ft_strcmp(str, "rb"))
 		rb(stack_b);
-	// if (!ft_strcmp(str, "rr") && (ft_strcmp(str, "rra") || ft_strcmp(str,
-	// 			"rrb")))
-	// 	rr(stack_a, stack_b);
+	if (!ft_strcmp(str, "rr") && (ft_strcmp(str, "rra") && ft_strcmp(str,
+				"rrb")))
+		rr(stack_a, stack_b);
 	if (!ft_strcmp(str, "rra"))
 		rra(stack_a);
 	if (!ft_strcmp(str, "rrb"))
