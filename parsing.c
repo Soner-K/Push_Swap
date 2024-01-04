@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 16:33:24 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:26:38 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ long	ft_atol(const char *nptr)
 	return (num * sign);
 }
 
-/*Checks if there's any error like no valid numbers (a number is valid if it has an int value
-and it has no duplicates) or an empty array.*/
+/*Checks if there's any error like no valid numbers.*/
 char	error(char **tab)
 {
 	int	i;
@@ -115,7 +114,6 @@ d_node	*create_list(int ac, char **av)
 	if (!tab || !tab[0])
 		return (NULL);
 	if (ac == 1 || error(tab))
-	// cas ou tab[i] = nombre+caracteres (ex : 7a) ?
 	{
 		write(1, "Error\n", 6);
 		exit(1);

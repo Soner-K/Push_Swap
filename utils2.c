@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:26:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 16:37:15 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:24:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_strlen(char *s)
+static int	ft_strlen(char *s)
 {
 	int	i;
 

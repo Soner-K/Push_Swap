@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:29:11 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/26 17:56:09 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:22:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void	ra(d_node **first_node)
 the last node to the first position of the stack.*/
 void	rra(d_node **first_node)
 {
+	d_node	*last_prev;
+
 	if (!(*first_node))
 		return ;
-	d_node *last_prev;
-
 	last_prev = ft_lstlast(*first_node)->prev;
 	ft_lstadd_front(first_node, ft_lstlast(*first_node));
 	last_prev->next = NULL;

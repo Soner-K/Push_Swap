@@ -6,15 +6,15 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:31:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/24 21:29:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:23:19 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Does sa and sb at the same time (I'm using ra two times since I use it anyway in rb
-so there's no need to call a function that will call another one when I can
-call it directly).*/
+/*Does sa and sb at the same time (I'm using sa two times since I use it
+anyway in rb so there's no need to call a function that will 
+call another one when I can call it directly).*/
 void	ss(d_node **first_a, d_node **first_b)
 {
 	sa(first_a);

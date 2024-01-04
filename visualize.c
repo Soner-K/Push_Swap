@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 16:37:00 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:29:18 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ void	count(char *str)
 
 int	main(int ac, char **av)
 {
-	d_node *stack_a;
-	d_node *stack_b;
-	char str[5];
-	char *str2;
+	d_node	*stack_a;
+	d_node	*stack_b;
+	char	str[5];
+	char	*str2;
 
 	str[4] = '\0';
 	str2 = NULL;
