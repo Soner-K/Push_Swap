@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 16:17:20 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:33:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ long	ft_atol(const char *nptr)
 	return (num * sign);
 }
 
-/*Checks if there's only valid numbers (only int values, no duplicates)*/
+/*Checks if there's any error like no valid numbers (a number is valid if it has an int value
+and it has no duplicates) or an empty array.*/
 char	error(char **tab)
 {
 	int	i;
@@ -86,7 +87,8 @@ char	error(char **tab)
 	j = 1;
 	while (tab[i])
 	{
-		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN)
+		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN
+			|| ft_atol(tab[i]) == NO_CONVERSION)
 			return (clear(tab), 1);
 		while (tab[j])
 		{
@@ -100,7 +102,7 @@ char	error(char **tab)
 	return (0);
 }
 
-/*Creates the list that will be used later, if the arguments are valid,
+/*Creates the list that will be used later if the arguments are valid,
 which is checked by the error function.*/
 d_node	*create_list(int ac, char **av)
 {
@@ -132,13 +134,13 @@ d_node	*create_list(int ac, char **av)
 	return (clear(tab), first);
 }
 
-int	main(int ac, char **av)
-{
-	d_node *lst;
+// int	main(int ac, char **av)
+// {
+// 	d_node *lst;
 
-	lst = create_list(ac, av);
-	if (!lst)
-		return (0);
-	print_list(lst, NULL);
-	clear_list(&lst);
-}
+// 	lst = create_list(ac, av);
+// 	if (!lst)
+// 		return (0);
+// 	print_list(lst, NULL);
+// 	clear_list(&lst);
+// }
