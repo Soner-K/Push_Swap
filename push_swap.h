@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/26 17:59:41 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:48:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ void				rrb(d_node **first_node);
 void				rrr(d_node **first_a, d_node **first_b);
 
 long				ft_atol(const char *nptr);
-char				error(char **av);
+char				error(char **tab);
+char				**ft_split(char const *s, char c);
+void				*ft_calloc(size_t nmemb, size_t size);
+void				ft_bzero(void *s, size_t n);
+char				*to_string(int ac, char **av);
+void				clear(char **tab);
 
 void				execute(char *str, d_node **stack_a, d_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);

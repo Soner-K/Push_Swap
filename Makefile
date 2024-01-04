@@ -5,7 +5,10 @@ SRC			= 	instructions_a.c \
 				test.c \
 				utils.c \
 				utils2.c \
-				visualize.c
+				visualize.c \
+				ft_split.c \
+				ft_bzero.c \
+				ft_calloc.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 

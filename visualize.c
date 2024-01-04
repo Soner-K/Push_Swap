@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/28 19:00:27 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:27:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,59 +33,68 @@ int	ft_strcmp(const char *s1, const char *s2)
 void	execute(char *str, d_node **stack_a, d_node **stack_b)
 {
 	if (!ft_strcmp(str, "sa"))
-		sa(stack_a);
+		return (sa(stack_a));
 	if (!ft_strcmp(str, "sb"))
-		sb(stack_b);
+		return(sb(stack_b));
 	if (!ft_strcmp(str, "ss"))
-		ss(stack_a, stack_b);
+		return(ss(stack_a, stack_b));
 	if (!ft_strcmp(str, "pa"))
-		pa(stack_a, stack_b);
+		return(pa(stack_a, stack_b));
 	if (!ft_strcmp(str, "pb"))
-		pb(stack_b, stack_a);
+		return(pb(stack_b, stack_a));
 	if (!ft_strcmp(str, "ra"))
-		ra(stack_a);
+		return(ra(stack_a));
 	if (!ft_strcmp(str, "rb"))
-		rb(stack_b);
+		return(rb(stack_b));
+	if (!ft_strcmp(str, "rrr"))
+		return(rrr(stack_a, stack_b));
 	if (!ft_strcmp(str, "rr") && (ft_strcmp(str, "rra") && ft_strcmp(str,
 				"rrb")))
-		rr(stack_a, stack_b);
+		return (rr(stack_a, stack_b));
 	if (!ft_strcmp(str, "rra"))
-		rra(stack_a);
+		return(rra(stack_a));
 	if (!ft_strcmp(str, "rrb"))
-		rrb(stack_b);
-	if (!ft_strcmp(str, "rrr"))
-		rrr(stack_a, stack_b);
+		return(rrb(stack_b));
 }
 
-void	first_node(d_node **stack)
+void	count(char *str)
 {
-	if (!(*stack))
-		return ;
-	while ((*stack)->prev)
-		*stack = (*stack)->prev;
-}
-int	main(int ac, char **av)
-{
-	d_node *stack_a;
-	d_node *stack_b;
-	char str[5];
-	char	*str2;
+	int	count;
 
-	str[4] = '\0';
-	str2 = NULL;
-	stack_a = create_list(ac, av);
-	stack_b = malloc(sizeof(d_node));
-	print_list(stack_a, NULL);
-	while (1)
+	count = 0;
+	while (*str)
 	{
-		read(1, str, 4);
-		str2 = ft_fuse(str2, str);
-		if (!ft_strcmp(str, "stop"))
-			break ;
-		execute(str, &stack_a, &stack_b);
-		print_list(stack_a, stack_b);
+		if ((*str) == '\n')
+			count++;
+		str++;
 	}
-	printf("COMMANDES :\n%s\n", str2);
-	clear_list(&stack_a);
-	clear_list(&stack_b);
+	printf("Nombre d'instructions : %d\n", count);
 }
+
+// int	main(int ac, char **av)
+// {
+// 	d_node *stack_a;
+// 	d_node *stack_b;
+// 	char str[5];
+// 	char	*str2;
+
+// 	str[4] = '\0';
+// 	str2 = NULL;
+// 	stack_a = create_list(ac, av);
+// 	stack_b = malloc(sizeof(d_node));
+// 	print_list(stack_a, NULL);
+// 	while (1)
+// 	{
+// 		read(1, str, 4);
+// 		str2 = ft_fuse(str2, str);
+// 		if (!ft_strcmp(str, "stop"))
+// 			break ;
+// 		execute(str, &stack_a, &stack_b);
+// 		print_list(stack_a, stack_b);
+// 	}
+// 	printf("COMMANDES :\n%s\n", str2);
+// 	count(str2);
+// 	free(str2);
+// 	clear_list(&stack_a);
+// 	clear_list(&stack_b);
+// }
