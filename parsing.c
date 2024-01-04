@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 15:55:42 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:17:20 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ long	ft_atol(const char *nptr)
 
 	num = 0;
 	i = 0;
-	sign = 0;
+	sign = 1;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
-			sign = 1;
+			sign = -1;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
@@ -71,9 +71,9 @@ long	ft_atol(const char *nptr)
 		num += (int)(nptr[i] - '0');
 		i++;
 	}
-	if (sign == 1)
-		return (-num);
-	return (num);
+	if (i == 0)
+		return (NO_CONVERSION);
+	return (num * sign);
 }
 
 /*Checks if there's only valid numbers (only int values, no duplicates)*/
@@ -82,8 +82,8 @@ char	error(char **tab)
 	int	i;
 	int	j;
 
-	i = 1;
-	j = 2;
+	i = 0;
+	j = 1;
 	while (tab[i])
 	{
 		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN)
@@ -91,8 +91,6 @@ char	error(char **tab)
 		while (tab[j])
 		{
 			if (ft_atol(tab[i]) == ft_atol(tab[j]))
-				return (clear(tab), 1);
-			if (ft_atol(tab[j]) == 0 && tab[j][0] != '0')
 				return (clear(tab), 1);
 			j++;
 		}
@@ -112,7 +110,7 @@ d_node	*create_list(int ac, char **av)
 	int		i;
 
 	tab = ft_split((to_string(ac, av)), ' ');
-	if (!tab)
+	if (!tab || !tab[0])
 		return (NULL);
 	if (ac == 1 || error(tab))
 	// cas ou tab[i] = nombre+caracteres (ex : 7a) ?

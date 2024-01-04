@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 15:48:26 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:15:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
+# define NO_CONVERSION 2147483649
 
 typedef struct s_node
 {
