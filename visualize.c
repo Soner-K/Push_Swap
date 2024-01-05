@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:29:18 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:46:35 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	execute(char *str, d_node **stack_a, d_node **stack_b)
 		return (rra(stack_a));
 	if (!ft_strcmp(str, "rrb"))
 		return (rrb(stack_b));
+	write(1, "Error\n", 6);
 }
 
 void	count(char *str)
@@ -75,10 +76,10 @@ int	main(int ac, char **av)
 {
 	d_node	*stack_a;
 	d_node	*stack_b;
-	char	str[5];
+	char	str[6];
 	char	*str2;
 
-	str[4] = '\0';
+	str[5] = '\0';
 	str2 = NULL;
 	stack_a = create_list(ac, av);
 	stack_b = malloc(sizeof(d_node));
@@ -91,10 +92,7 @@ int	main(int ac, char **av)
 		if (!ft_strcmp(str, "stop"))
 			break ;
 		execute(str, &stack_a, &stack_b);
-		if (stack_b)
-			print_list(stack_a, stack_b);
-		else
-			print_list(stack_a, stack_b);
+		print_list(stack_a, stack_b);
 	}
 	printf("COMMANDES :\n%s\n", str2);
 	count(str2);

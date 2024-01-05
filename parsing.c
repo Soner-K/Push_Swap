@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:26:38 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/05 16:27:34 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	clear(char **tab)
 }
 
 /*As the name suggests, this functions's goal
-is to store all the strings of av inside one string only*/
+is to store all the strings of a char **(in this case
+av) inside one string only*/
 char	*to_string(int ac, char **av)
 {
 	char	*str;

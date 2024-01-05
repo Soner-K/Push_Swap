@@ -2,7 +2,6 @@ SRC			= 	instructions_a.c \
  				instructions_b.c \
 				instructions.c \
 				parsing.c \
-				test.c \
 				utils.c \
 				utils2.c \
 				visualize.c \
