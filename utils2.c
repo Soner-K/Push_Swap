@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:26:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:24:53 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:48:27 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
 	int	i;
 
@@ -82,4 +82,19 @@ void	print_list(d_node *first_a, d_node *first_b)
 		}
 		printf("\n");
 	}
+}
+
+int	ft_lstsize(d_node *lst)
+{
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

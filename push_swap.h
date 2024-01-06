@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:35:30 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:51:17 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
-# define NO_CONVERSION 2147483649
+# define NO_CONVERSION 0 /**/
 
 typedef struct s_node
 {
@@ -37,6 +37,7 @@ void				ft_lstadd_back(d_node **lst, d_node *new);
 d_node				*create_list(int ac, char **av);
 void				print_list(d_node *first_a, d_node *first_b);
 char				*ft_fuse(char *s1, char *s2);
+int					ft_strlen(char *s);
 
 void				sa(d_node **first_a);
 void				sb(d_node **first_b);
@@ -57,6 +58,7 @@ void				*ft_calloc(size_t nmemb, size_t size);
 void				ft_bzero(void *s, size_t n);
 char				*to_string(int ac, char **av);
 void				clear(char **tab);
+int					ft_lstsize(d_node *lst);
 
 void				execute(char *str, d_node **stack_a, d_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);

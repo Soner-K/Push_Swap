@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/05 17:46:35 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:39:55 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	main(int ac, char **av)
 	print_list(stack_a, NULL);
 	while (1)
 	{
-		read(1, str, 4);
+		read(1, str, 4);/**/
 		str2 = ft_fuse(str2, str);
 		if (!ft_strcmp(str, "stop"))
 			break ;
