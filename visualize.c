@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/06 16:39:55 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/08 13:06:07 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int	main(int ac, char **av)
 		if (!ft_strcmp(str, "stop"))
 			break ;
 		execute(str, &stack_a, &stack_b);
+		ft_bzero(str, 4);
 		print_list(stack_a, stack_b);
 	}
 	printf("COMMANDES :\n%s\n", str2);
