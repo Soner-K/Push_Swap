@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:58:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 14:29:20 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/09 17:09:37 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/09 19:52:44 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	print_list(d_node *first_a, d_node *first_b)
 {
-	void	*ptr;
-
-	if ((size != 0) && nmemb >= __SIZE_MAX__ / size)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	if (nmemb == 0 || !size)
-		return (ptr);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	printf("Stack A\t\tStack B\n");
+	while (first_a != NULL || first_b != NULL)
+	{
+		if (first_a != NULL)
+		{
+			printf("%d", first_a->data);
+			first_a = first_a->next;
+		}
+		printf("\t\t");
+		if (first_b != NULL)
+		{
+			printf("%d", first_b->data);
+			first_b = first_b->next;
+		}
+		printf("\n");
+	}
 }

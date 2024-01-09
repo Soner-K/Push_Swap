@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:40:09 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:35:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:15:01 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /* Swaps the first two elements at the top of the stack B.*/
 void	sb(d_node **first_b)

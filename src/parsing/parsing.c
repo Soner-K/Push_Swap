@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/06 15:51:59 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:50:34 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*Used to free a char** */
 void	clear(char **tab)
@@ -104,39 +104,61 @@ char	error(char **tab)
 
 /*Creates the list that will be used later if the arguments are valid,
 which is checked by the error function.*/
-d_node	*create_list(int ac, char **av)
-{
-	d_node	*lst;
-	d_node	*first;
-	char	**tab;
-	int		i;
+// d_node	*create_list(int ac, char **av)
+// {
+// 	d_node	*lst;
+// 	d_node	*first;
+// 	char	**tab;
+// 	int		i;
 
-	tab = ft_split((to_string(ac, av)), ' ');
-	if (!tab || !tab[0])
-		return (NULL);
-	if (ac == 1 || error(tab))
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
-	i = 0;
-	lst = ft_lstnew(ft_atol(tab[i++]));
-	if (!lst)
-		return (NULL);
-	first = lst;
-	while (tab[i])
-	{
-		ft_lstadd_back(&lst, ft_lstnew(ft_atol(tab[i++])));
-		lst = lst->next;
-	}
-	lst->next = NULL;
-	return (clear(tab), first);
-}
+// 	tab = ft_split((to_string(ac, av)), ' ');
+// 	if (!tab || !tab[0])
+// 		return (NULL);
+// 	if (ac == 1 || error(tab))
+// 	{
+// 		write(1, "Error\n", 6);
+// 		exit(1);
+// 	}
+// 	i = 0;
+// 	lst = ft_lstnew(ft_atol(tab[i++]));
+// 	if (!lst)
+// 		return (NULL);
+// 	first = lst;
+// 	while (tab[i])
+// 	{
+// 		ft_lstadd_back(&lst, ft_lstnew(ft_atol(tab[i++])));
+// 		lst = lst->next;
+// 	}
+// 	lst->next = NULL;
+// 	return (clear(tab), first);
+// }
+
+// d_node	*create_list(int *tab, size_t size)
+// {
+// 	size_t	i;
+// 	d_node	*lst;
+// 	d_node	*first;
+//
+// 	i = 0;
+// 	lst = ft_lstnew(tab[i++]);
+// 	if (!lst)
+// 		return (NULL);
+// 	first = lst;
+// 	while (i < size)
+// 	{
+// 		ft_lstadd_back(&lst, ft_lstnew(tab[i++]));
+// 		if (!(lst->next))
+// 			return (NULL);
+// 		lst = lst->next;
+// 	}
+// 	lst->next = NULL;
+// 	return (first);
+// } pb : initialisation de chaque variable dans le noeud
 
 // int	main(int ac, char **av)
 // {
 // 	d_node *lst;
-	
+//
 // 	lst = create_list(ac, av);
 // 	if (!lst)
 // 		return (0);

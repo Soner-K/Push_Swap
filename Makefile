@@ -1,13 +1,24 @@
-SRC			= 	instructions_a.c \
- 				instructions_b.c \
-				instructions.c \
-				parsing.c \
-				utils.c \
-				utils2.c \
-				visualize.c \
-				ft_split.c \
-				ft_bzero.c \
-				ft_calloc.c \
+SRC			= 	src/instructions/instructions_a.c \
+ 				src/instructions/instructions_b.c \
+				src/instructions/instructions.c \
+				src/parsing/parsing.c \
+				src/parsing/ft_bzero.c \
+				src/parsing/ft_calloc.c \
+				src/parsing/ft_split.c \
+				src/parsing/parsing.c \
+				src/utils/clear_list.c \
+				src/utils/ft_fuse.c \
+				src/utils/ft_lstadd_front.c \
+				src/utils/ft_lstlast.c \
+				src/utils/ft_lstadd_back.c \
+				src/utils/ft_lstnew.c \
+				src/utils/ft_lstsize.c \
+				src/utils/ft_strcmp.c \
+				src/utils/ft_strlen.c \
+				src/utils/len_tab.c \
+				src/printing/print_list.c \
+				src/printing/visualize.c \
+				src/merge_sort/create_tab.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 

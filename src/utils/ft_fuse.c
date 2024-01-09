@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   ft_fuse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 15:26:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/06 15:48:27 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/09 17:09:05 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/09 19:51:34 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "../../includes/push_swap.h"
 
 char	*ft_fuse(char *s1, char *s2)
 {
@@ -51,50 +39,4 @@ char	*ft_fuse(char *s1, char *s2)
 	new[i] = 0;
 	free(s1);
 	return (new);
-}
-
-void	ft_lstadd_back(d_node **lst, d_node *new)
-{
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	new->prev = ft_lstlast(*lst);
-	ft_lstlast(*lst)->next = new;
-}
-
-void	print_list(d_node *first_a, d_node *first_b)
-{
-	printf("Stack A\t\tStack B\n");
-	while (first_a != NULL || first_b != NULL)
-	{
-		if (first_a != NULL)
-		{
-			printf("%d", first_a->data);
-			first_a = first_a->next;
-		}
-		printf("\t\t");
-		if (first_b != NULL)
-		{
-			printf("%d", first_b->data);
-			first_b = first_b->next;
-		}
-		printf("\n");
-	}
-}
-
-int	ft_lstsize(d_node *lst)
-{
-	int	i;
-
-	i = 0;
-	if (!lst)
-		return (0);
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
 }

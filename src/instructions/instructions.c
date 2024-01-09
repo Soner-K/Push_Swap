@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:31:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 18:23:19 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:15:07 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*Does sa and sb at the same time (I'm using sa two times since I use it
 anyway in rb so there's no need to call a function that will 

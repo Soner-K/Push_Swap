@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/08 09:31:32 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:23:31 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ d_node				*create_list(int ac, char **av);
 void				print_list(d_node *first_a, d_node *first_b);
 char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
+int					len_tab(char **av);
 
+//instructions
 void				sa(d_node **first_a);
 void				sb(d_node **first_b);
 void				ss(d_node **first_a, d_node **first_b);
@@ -51,6 +53,7 @@ void				rra(d_node **first_node);
 void				rrb(d_node **first_node);
 void				rrr(d_node **first_a, d_node **first_b);
 
+//parsing
 long				ft_atol(const char *nptr);
 char				error(char **tab);
 char				**ft_split(char const *s, char c);

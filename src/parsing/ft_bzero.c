@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:58:05 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/04 14:29:25 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:12:57 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_bzero(void *s, size_t n)
 {
