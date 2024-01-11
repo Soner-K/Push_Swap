@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 19:23:31 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:23:18 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
 int					len_tab(char **av);
 
-//instructions
+// instructions
 void				sa(d_node **first_a);
 void				sb(d_node **first_b);
 void				ss(d_node **first_a, d_node **first_b);
@@ -53,7 +53,7 @@ void				rra(d_node **first_node);
 void				rrb(d_node **first_node);
 void				rrr(d_node **first_a, d_node **first_b);
 
-//parsing
+// parsing
 long				ft_atol(const char *nptr);
 char				error(char **tab);
 char				**ft_split(char const *s, char c);
@@ -62,6 +62,11 @@ void				ft_bzero(void *s, size_t n);
 char				*to_string(int ac, char **av);
 void				clear(char **tab);
 int					ft_lstsize(d_node *lst);
+
+int					*create_tab(int ac, char **av);
+void				quicksort(int *tab, int low, int high);
+
+int					binary_search(int *tab, int right, int value);
 
 void				execute(char *str, d_node **stack_a, d_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);

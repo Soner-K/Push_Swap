@@ -1,54 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_tab.c                                       :+:      :+:    :+:   */
+/*   binary_search.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 18:34:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 19:52:22 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/11 14:13:26 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/11 14:27:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	*create_tab(int ac, char **av)
+int	binary_search(int *tab, int right, int value)
 {
-	int		*tab;
-	int		i;
-	char	**new_av;
+	int	left;
+	int	med;
 
-	new_av = ft_split(to_string(ac, av), ' ');
-	if (!new_av || !new_av[0])
-		return (NULL); //exit?
-	if (ac == 1 || error(new_av))
+	left = 0;
+	while (right >= left)
 	{
-		write(1, "Error\n", 6);
-		exit(1);
+		med = left + (right - left) / 2;
+		if (tab[med] == value)
+			return (med);
+		else if (tab[med] < value)
+			left = med + 1;
+		else
+			right = med - 1;
 	}
-	tab = (int *) malloc(sizeof(int) * len_tab(new_av));
-	if (!tab)
-		return (clear(new_av), NULL);
-	i = 0;
-	while (new_av[i])
-	{
-		tab[i] = ft_atol(new_av[i]);
-		i++;
-	}
-	return (tab);
+	return (-1);
 }
 
-// int main(int ac, char **av)
+// int	main(int ac, char **av)
 // {
 // 	int *tab;
 // 	int i;
-	
+
 // 	tab = create_tab(ac, av);
+// 	ac--;
 // 	i = 0;
-// 	while (i < 10)
+// 	quicksort(tab, 0, ac - 1);
+// 	while (i < ac)
 // 	{
-// 		printf("%d\n", tab[i]);
+// 		printf("%d ", tab[i]);
 // 		i++;
 // 	}
-// 	free(tab);
+// 	printf("\n");
+// 	printf("Indice de la valeur %ld = %d\n", ft_atol(av[4]), binary_search(tab,
+// 			ac - 1, ft_atol(av[4])));
 // }

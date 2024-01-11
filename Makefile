@@ -18,7 +18,9 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/utils/len_tab.c \
 				src/printing/print_list.c \
 				src/printing/visualize.c \
-				src/merge_sort/create_tab.c \
+				src/quicksort/create_tab.c \
+				src/quicksort/quicksort.c \
+				src/binary_search/binary_search.c
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 
