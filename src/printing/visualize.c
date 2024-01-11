@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 19:19:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:37:56 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	check(const char *s1, const char *s2)
 	return (0);
 }
 
-void	execute(char *str, d_node **stack_a, d_node **stack_b)
+void	execute(char *str, t_node **stack_a, t_node **stack_b)
 {
 	if (!check(str, "sa"))
 		return (sa(stack_a));
@@ -72,32 +72,31 @@ void	count(char *str)
 	printf("Nombre d'instructions : %d\n", count);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	d_node	*stack_a;
-// 	d_node	*stack_b;
-// 	char	str[6];
-// 	char	*str2;
+int	main(int ac, char **av)
+{
+	t_node	*stack_a;
+	t_node	*stack_b;
+	char	str[6];
+	char	*str2;
 
-// 	str[5] = '\0';
-// 	str2 = NULL;
-// 	stack_a = create_list(ac, av);
-// 	stack_b = malloc(sizeof(d_node));
-// 	stack_b = NULL;
-// 	print_list(stack_a, NULL);
-// 	while (1)
-// 	{
-// 		read(1, str, 4);/**/
-// 		str2 = ft_fuse(str2, str);
-// 		if (!check(str, "stop"))
-// 			break ;
-// 		execute(str, &stack_a, &stack_b);
-// 		ft_bzero(str, 4);
-// 		print_list(stack_a, stack_b);
-// 	}
-// 	printf("COMMANDES :\n%s\n", str2);
-// 	count(str2);
-// 	free(str2);
-// 	clear_list(&stack_a);
-// 	clear_list(&stack_b);
-// }
+	str[5] = '\0';
+	str2 = NULL;
+	stack_a = create_list(ac, av);
+	stack_b = NULL;
+	print_list(stack_a, NULL);
+	while (1)
+	{
+		read(1, str, 4);/**/
+		str2 = ft_fuse(str2, str);
+		if (!check(str, "stop"))
+			break ;
+		execute(str, &stack_a, &stack_b);
+		ft_bzero(str, 4);
+		print_list(stack_a, stack_b);
+	}
+	printf("COMMANDES :\n%s\n", str2);
+	count(str2);
+	free(str2);
+	clear_list(&stack_a);
+	clear_list(&stack_b);
+}

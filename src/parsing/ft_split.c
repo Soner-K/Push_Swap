@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 17:12:49 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:13:58 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static size_t	ft_count_words(char const *s, char c)
 		count++;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1])
+		if (s[i + 1] && s[i] == c && s[i + 1] != c)
 			count++;
 		i++;
 	}

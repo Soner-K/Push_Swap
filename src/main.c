@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:50:31 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/11 15:38:11 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/11 14:41:07 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/11 14:52:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-void	ft_lstadd_back(t_node **lst, t_node *new)
-{
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	new->prev = ft_lstlast(*lst);
-	ft_lstlast(*lst)->next = new;
-}
+// int main(int ac, char **av)
+// {
+// 	int		*tab;
+	
+// 	tab = create_tab(ac, av);
+// 	if (!tab)
+// 		return (1);
+	
+// }

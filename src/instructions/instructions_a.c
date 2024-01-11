@@ -6,14 +6,14 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:29:11 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 17:44:11 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:36:56 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /* Swaps the first two elements at the top of the stack A.*/
-void	sa(d_node **first_a)
+void	sa(t_node **first_a)
 {
 	int	tmp;
 
@@ -25,9 +25,9 @@ void	sa(d_node **first_a)
 }
 
 /*Pushes the top element of B's stack (push) to the top of A's stack (store).*/
-void	pa(d_node **store, d_node **push)
+void	pa(t_node **store, t_node **push)
 {
-	d_node	*tmp;
+	t_node	*tmp;
 
 	if (!(*push))
 		return ;
@@ -40,9 +40,9 @@ void	pa(d_node **store, d_node **push)
 
 /*Shift up all the nodes of stack B once. It can be done by simply placing
 the first node to the last position of the stack.*/
-void	ra(d_node **first_node)
+void	ra(t_node **first_node)
 {
-	d_node	*first;
+	t_node	*first;
 
 	if (!(*first_node))
 		return ;
@@ -54,9 +54,9 @@ void	ra(d_node **first_node)
 
 /*Shift down all the nodes of stack A once. It can be done by simply placing
 the last node to the first position of the stack.*/
-void	rra(d_node **first_node)
+void	rra(t_node **first_node)
 {
-	d_node	*last_prev;
+	t_node	*last_prev;
 
 	if (!(*first_node) || !(*first_node)->next)
 		return ;
