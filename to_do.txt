@@ -1,0 +1,11 @@
+Handling find_min function : 
+issue when min is moved to another stack --> min finding depends on sorted[0]
+
+Improving the parsing :
+Cases where there are number and letter (7a) and "4 5"6" 1"
+
+Using the median for the sorting (with best function)
+
+Doing a best function with the remaining instructions
+
+jsp pq j'ecris en anglais sah

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/11 15:36:42 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:59:28 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,48 @@
 # define INT_MAX 2147483647
 # define NO_CONVERSION 0 /**/
 
+# define SA 1
+# define SB 2
+# define SS 3
+
+# define RA 4
+# define RB 5
+# define RR 6
+
+# define RRA 7
+# define RRB 8
+# define RRR 9
+
+# define PA 10
+# define PB 11
+
 typedef struct s_node
 {
 	int				data;
+	int				*sorted;
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
 
+typedef struct s_min
+{
+	int				value;
+	size_t			gap;
+}					t_min;
+
 t_node				*ft_lstnew(int data);
-t_node				*ft_lstlast(t_node *node);
+t_node				*ft_lstlast(t_node *lst);
+t_node				*ft_lstfirst(t_node *lst);
 void				add_node(t_node **node, t_node *insert);
-void				clear_list(t_node **node);
+void				clear_list(t_node **lst, char binary);
 void				ft_lstadd_front(t_node **lst, t_node *new);
 void				ft_lstadd_back(t_node **lst, t_node *new);
-t_node				*create_list(int ac, char **av);
 void				print_list(t_node *first_a, t_node *first_b);
 char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
 int					len_tab(char **av);
+
+void				play(int ac, char **av);
 
 // instructions
 void				sa(t_node **first_a);
@@ -60,13 +84,20 @@ char				**ft_split(char const *s, char c);
 void				*ft_calloc(size_t nmemb, size_t size);
 void				ft_bzero(void *s, size_t n);
 char				*to_string(int ac, char **av);
+t_node				*create_list(int ac, char **av, int i);
 void				clear(char **tab);
 int					ft_lstsize(t_node *lst);
 
-int					*create_tab(int ac, char **av);
+// sorting and finding
+int					*create_tab(int ac, char **av, int *size_tab);
 void				quicksort(int *tab, int low, int high);
-
+int					*create_and_sort(int ac, char **av, int size);
 int					binary_search(int *tab, int right, int value);
+
+// algorithm
+t_min				find_next_min(t_node *lst);
+t_min				find_min(t_node *lst, int *sorted);
+int					*best(t_node *lst, char *mode);
 
 void				execute(char *str, t_node **stack_a, t_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);
