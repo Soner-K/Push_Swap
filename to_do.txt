@@ -1,11 +1,17 @@
 Handling find_min function : 
 issue when min is moved to another stack --> min finding depends on sorted[0]
+HANDLED
 
 Improving the parsing :
 Cases where there are number and letter (7a) and "4 5"6" 1"
+hassoul
 
 Using the median for the sorting (with best function)
 
 Doing a best function with the remaining instructions
+
+Implemeting a way to keep pushing into stack b while stack isnt sorted
+(using SORTED = 1 within lst? to check if the next data of a given
+node is where it should be)
 
 jsp pq j'ecris en anglais sah

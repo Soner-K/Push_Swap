@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 17:35:32 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:15:47 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	play(int ac, char **av)
 	t_node	*stack_a;
 	t_node	*stack_b;
 	char	str[6];
-	int		*tab;
 	char	*str2;
+	int		*tab;
 
 	str[5] = '\0';
 	str2 = NULL;
@@ -86,8 +86,13 @@ void	play(int ac, char **av)
 	print_list(stack_a, NULL);
 	while (1)
 	{
-		tab = best(stack_a, "min");
-		printf("Do %d %d times\n", tab[0], tab[1]);
+		if (stack_a)
+		{
+			tab = best_rotate(stack_a, "min", 10);
+			printf("Do %d %d times\n", tab[0], tab[1]);
+			printf("Index of tab is %ld\n", find_index(stack_a, stack_a->sorted,
+					stack_a->sorted[9]));
+		}
 		read(1, str, 4); /**/
 		str2 = ft_fuse(str2, str);
 		if (!check(str, "stop"))
@@ -101,4 +106,9 @@ void	play(int ac, char **av)
 	free(str2);
 	clear_list(&stack_a, 1);
 	clear_list(&stack_b, 0);
+}
+
+int	main(int ac, char **av)
+{
+	play(ac, av);
 }

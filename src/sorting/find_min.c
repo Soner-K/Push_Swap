@@ -6,19 +6,21 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 08:56:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 17:20:21 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/15 12:18:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_min	find_min(t_node *lst, int *sorted)
+t_min	find_min(t_node *lst, int *sorted, int size)
 {
 	t_min	min;
-	int		size;
+	long	index_min;
 
-	size = 0;
-	min.value = sorted[0];
+	index_min = find_index(lst, sorted, sorted[size - 1]);
+	if (index_min == -1)
+		return (min.gap = -1, min.value = -1, min);
+	min.value = sorted[index_min];
 	min.gap = 0;
 	while (lst)
 	{
