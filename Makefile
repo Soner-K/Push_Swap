@@ -37,6 +37,7 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/sorting/find_min.c \
 				src/sorting/best_rotate.c \
 				src/sorting/find_index.c \
+				src/sorting/find_pairs.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 

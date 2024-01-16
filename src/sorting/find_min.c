@@ -6,12 +6,15 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 08:56:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/15 12:18:45 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:49:54 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+/*Find the minimum value of the stack, using the sorted tab.
+Find_index is used to know which value to look for (since the
+stack's size, and therefore its values, will change during the algorithm)*/
 t_min	find_min(t_node *lst, int *sorted, int size)
 {
 	t_min	min;

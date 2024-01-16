@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   best.c                                             :+:      :+:    :+:   */
+/*   best_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:01:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/15 14:04:53 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:15:02 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	*best_rotate(t_node *lst, char *mode, int size) // proteger pour !lst?
 		lst = lst->next;
 	}
 	tab[1] = count;
-	return (tab);
+	return (tab); ///////////////// ATTENTION AUX LEAKS \\\\\\\\\\\\\\\\\\\/
 }
 
 // int main(int ac, char **av)

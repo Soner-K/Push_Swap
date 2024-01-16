@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/15 14:05:02 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:02:52 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ typedef struct s_min
 	int				value;
 	size_t			gap;
 }					t_min;
+
+typedef struct s_pairs
+{
+	int				first;
+	int				second;
+	int				pos_first;
+	int				pos_second;
+	long			gap;
+}					t_pairs;
 
 t_node				*ft_lstnew(int data);
 t_node				*ft_lstlast(t_node *lst);
@@ -99,7 +108,7 @@ t_min				find_next_min(t_node *lst);
 t_min				find_min(t_node *lst, int *sorted, int size);
 int					*best_rotate(t_node *lst, char *mode, int size);
 long				find_index(t_node *lst, int *sorted, int last);
+t_pairs				find_pairs(t_node *lst, int *sorted, int last);
 
-void				execute(char *str, t_node **stack_a, t_node **stack_b);
 int					ft_strcmp(const char *s1, const char *s2);
 #endif
