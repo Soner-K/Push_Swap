@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   best_rotate.c                                      :+:      :+:    :+:   */
+/*   best_rotate_min.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:01:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 12:15:02 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:39:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ static void	check_mode(t_node *lst, char *mode, t_min *min, int size)
 		*min = find_min(lst, lst->sorted, size);
 }
 
-int	*best_rotate(t_node *lst, char *mode, int size) // proteger pour !lst?
+/*find the best instruction to attain the min value
+tab[0] = instruction
+tab[1] = how many times to do the instruction
+tab[2] = 0, so that while (tab[i]) works*/
+
+int	*best_rotate_min(t_node *lst, char *mode, int size) // proteger pour !lst?
 {
 	int *tab;
 	size_t lstsize;

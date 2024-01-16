@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 12:51:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:44:17 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	play(int ac, char **av)
 	{
 		if (stack_a)
 		{
-			tab = best_rotate(stack_a, "next_min", last);
+			tab = best_rotate_min(stack_a, "next_min", last);
 			// printf("Do %d %d times (nm) \n", tab[0], tab[1]);
 			// tab = best_rotate(stack_a, "min", last);
 			// printf("Do %d %d times (min) \n", tab[0], tab[1]);
@@ -119,7 +119,7 @@ void	play(int ac, char **av)
 		print_list(stack_a, stack_b);
 	}
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
-	printf("COMMANDES :\n%s\n", str2);
+	printf("\nCOMMANDES :\n%s\n", str2);
 	count(str2);
 	free(str2);
 	clear_list(&stack_a, 1);

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:34:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 16:39:21 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:36:47 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*create_tab(int ac, char **av, int *size_tab)
 	int		i;
 	char	**new_av;
 
-	new_av = ft_split(to_string(ac, av), ' '); //leak car a
+	new_av = ft_split(to_string(ac, av), ' '); //leak car a (hein?)
 	if (!new_av || !new_av[0])
 		return (NULL); //exit?
 	if (ac == 1 || error(new_av))

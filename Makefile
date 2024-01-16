@@ -35,7 +35,7 @@ SRC			= 	src/instructions/instructions_a.c \
 				\
 				src/sorting/find_next_min.c \
 				src/sorting/find_min.c \
-				src/sorting/best_rotate.c \
+				src/sorting/best_rotate_min.c \
 				src/sorting/find_index.c \
 				src/sorting/find_pairs.c \
 
