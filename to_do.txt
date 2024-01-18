@@ -15,3 +15,4 @@ Implemeting a way to keep pushing into stack b while stack isnt sorted
 node is where it should be)
 
 jsp pq j'ecris en anglais sah
+travailler avec des pairs de minimum.

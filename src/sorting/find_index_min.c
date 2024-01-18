@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_index.c                                       :+:      :+:    :+:   */
+/*   find_index_min.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:55:18 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 11:46:25 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:17:58 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*find the minimum CURRENT value of the stack using the sorted tab*/
-long	find_index(t_node *lst, int *sorted, int last)
+/*retrieve current's minimum value of the stack using the sorted tab
+and return its index*/
+long	find_index_min(t_node *lst, int *sorted, int last)
 {
 	long	i;
 	t_node	*first;

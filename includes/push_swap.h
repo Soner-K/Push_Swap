@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 13:51:36 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:22:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,22 @@ typedef struct s_pairs
 	long			gap;
 }					t_pairs;
 
+// typedef struct s_ins
+// {
+// 	char			instruction_f;
+// 	int				times_f;
+// 	char			instruction_s;
+// 	int				times_s;
+// 	char			error;
+// }					t_ins;
+
+typedef struct s_ins
+{
+	char			instruction;
+	int				times;
+	char			error;
+}					t_ins;
+
 t_node				*ft_lstnew(int data);
 t_node				*ft_lstlast(t_node *lst);
 t_node				*ft_lstfirst(t_node *lst);
@@ -70,6 +86,8 @@ void				print_list(t_node *first_a, t_node *first_b);
 char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
 int					len_tab(char **av);
+int					min(int a, int b);
+int					max(int a, int b, char *changed);
 
 void				play(int ac, char **av);
 
@@ -106,9 +124,12 @@ int					binary_search(int *tab, int right, int value);
 // algorithm
 t_min				find_next_min(t_node *lst);
 t_min				find_min(t_node *lst, int *sorted, int size);
-int					*best_rotate_min(t_node *lst, char *mode, int size);
-long				find_index(t_node *lst, int *sorted, int last);
+t_ins				best_rotate_min(t_node *lst, char *mode, int size);
+long				find_index_min(t_node *lst, int *sorted, int last);
 t_pairs				find_pairs(t_node *lst, int *sorted, int last);
+t_ins				best_rotate_pairs(t_node *lst, t_pairs pairs);
+t_ins				best_remaining(t_node *lst, int lstsize, int last);
+t_ins				find_value(t_node *lst, int value, size_t i);
 
 int					ft_strcmp(const char *s1, const char *s2);
 #endif

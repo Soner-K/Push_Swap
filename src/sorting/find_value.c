@@ -1,51 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   best_rotate_min.c                                  :+:      :+:    :+:   */
+/*   find_value.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 11:01:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/18 17:22:54 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/18 16:34:57 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/18 17:23:11 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*GERER LES PA ET PB ET LEUR IMPACT SUR SORTED*/
+// t_ins	best(t_node *lst, int *sorted, int last)
+// {
+// 	static long	index_f;
+// 	static long	index_s;
+// 	t_ins		ins;
+	
+// 	index_f = find_index_min(lst, sorted, last);
+// 	if (sorted[index_f + 1])
+// 		index_s = index_f + 1;
+	
+	
+// }
 
-static void	check_mode(t_node *lst, char *mode, t_min *min, int size)
-{
-	if (!mode)
-		return ;
-	if (!ft_strcmp("next_min", mode))
-	{
-		*min = find_next_min(lst);	
-	}
-	else
-		*min = find_min(lst, lst->sorted, size);
-}
-
-/*find the best instruction to attain the min value*/
-
-t_ins	best_rotate_min(t_node *lst, char *mode, int size) // proteger pour !lst?
+t_ins	find_value(t_node *lst, int value, size_t i)
 {
 	t_ins	ins;
+	t_node	*first;
 	size_t	lstsize;
 	int		count;
-	t_min	min;
-
+	
 	lstsize = ft_lstsize(lst);
 	count = 0;
-	check_mode(lst, mode, &min, size);
-	if (min.gap > lstsize / 2)
+	first = lst;
+	while (lst)
+	{
+		if (lst->data == value)
+			break ;
+		i++;
+		lst = lst->next;
+	}
+	lst = first;
+	if (i > lstsize / 2)
 	{
 		ins.instruction = RRA;
 		count = lstsize;
 	}
 	else
 		ins.instruction = RA;
-	while (lst && lst->data != min.value)
+	while (lst && lst->data != value)
 	{
 		if (ins.instruction == RRA)
 			count--;
@@ -54,10 +59,5 @@ t_ins	best_rotate_min(t_node *lst, char *mode, int size) // proteger pour !lst?
 		lst = lst->next;
 	}
 	ins.times = count;
-	return (ins); ///////////////// ATTENTION AUX LEAKS \\\\\\\\\\\\\\\\\\\/
+	return (ins);
 }
-
-// int main(int ac, char **av)
-// {
-// 	play(ac, av);
-// }

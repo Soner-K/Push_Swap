@@ -24,6 +24,8 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/utils/len_tab.c \
 				src/utils/ft_lstfirst.c \
 				src/utils/create_and_sort.c \
+				src/utils/min.c \
+				src/utils/max.c \
 				\
 				src/printing/print_list.c \
 				src/printing/visualize.c \
@@ -36,8 +38,11 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/sorting/find_next_min.c \
 				src/sorting/find_min.c \
 				src/sorting/best_rotate_min.c \
-				src/sorting/find_index.c \
+				src/sorting/find_index_min.c \
 				src/sorting/find_pairs.c \
+				src/sorting/find_value.c \
+				#src/sorting/best_rotate_pairs.c \
+				src/sorting/best_remaining.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 

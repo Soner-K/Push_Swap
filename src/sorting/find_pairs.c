@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:10:22 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 12:43:20 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:18:46 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static int	*set(t_node *lst, int *sorted, int last)
 {
 	int	*tab;
 	int	index_first;
-	
+
 	tab = malloc(sizeof(int) * 2);
 	if (!tab)
 		return (NULL);
-	index_first = find_index(lst, sorted, last);
+	index_first = find_index_min(lst, sorted, last);
 	tab[0] = sorted[index_first];
-	tab[1] = sorted[index_first + 1];
+	tab[1] = sorted[index_first + 1]; // depassement de tableau?
 	return (tab);
 }
 
@@ -40,7 +40,7 @@ t_pairs	find_pairs(t_node *lst, int *sorted, int last)
 	t_pairs	pairs;
 	int		*tab;
 	int		i;
-	
+
 	tab = set(lst, sorted, last);
 	// if (!tab)
 	// 	return (pairs); //gerer erreur.

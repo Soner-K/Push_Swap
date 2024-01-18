@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 08:56:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/16 11:49:54 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:18:40 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_min	find_min(t_node *lst, int *sorted, int size)
 	t_min	min;
 	long	index_min;
 
-	index_min = find_index(lst, sorted, sorted[size - 1]);
+	index_min = find_index_min(lst, sorted, sorted[size - 1]);
 	if (index_min == -1)
 		return (min.gap = -1, min.value = -1, min);
 	min.value = sorted[index_min];

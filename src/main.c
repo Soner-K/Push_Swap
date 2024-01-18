@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:41:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/11 14:52:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/18 10:19:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 // int main(int ac, char **av)
 // {
 // 	int		*tab;
-	
+//
 // 	tab = create_tab(ac, av);
 // 	if (!tab)
 // 		return (1);
-	
+//
 // }
