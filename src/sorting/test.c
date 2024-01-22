@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 09:42:30 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 15:32:43 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 21:54:13 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,27 @@ static void	to_top(t_node *lst, t_ins *ins)
 
 	lstsize = ft_lstsize(lst);
 	pos = find_pos(lst, ins[1].value);
-	printf("\nPos = %ld\nins[0] = %d", pos, ins[0].instruction);
+	printf("\nPos = %ld\nins[0].instruction = %d\n", pos, ins[0].instruction);
+	printf("ins[0].data = %d, ins[0].times = %ld\n", ins[0].value,
+		ins[0].times);
+	printf("\nins[1].times = %ld\n", ins[1].times);
 	if (ins[0].instruction == RRA)
+	{
 		pos += ins[0].times;
+	}
 	else
 		pos -= ins[0].times;
 	printf("\npos after = %ld\n", pos);
 	if (pos > lstsize / 2)
 	{
-		ins[1].times += ins[0].times;
+		// ins[1].times += ins[0].times;
+		ins[1].times = lstsize - pos;
 		ins[1].instruction = RRA;
 	}
 	else
 	{
-		ins[1].times -= ins[0].times;
+		// ins[1].times -= ins[0].times;
+		ins[1].times = ins[0].times - pos - 1;
 		ins[1].instruction = RA;
 	}
 }
@@ -50,10 +57,15 @@ void	to_do_first(t_node *lst, t_ins *ins)
 {
 	if (ins[0].times > ins[1].times)
 		ft_swap(&ins[0], &ins[1]);
-	if (ins[0].instruction == RRA && ins[1].instruction == RRA)
+	else if (ins[0].instruction == RRA && ins[1].instruction == RRA)
 		ins[1].times -= ins[0].times;
 	else if (ins[0].instruction == RA && ins[1].instruction == RA)
-		ins[1].times -= (ins[0].times + 1); // -1 car pb
+	{
+		if (ins[1].times == 0)
+			ins[0].times -= 2;
+		else
+			ins[1].times -= ins[0].times + 1; // -1 car pb
+	}
 	else
 		to_top(lst, ins);
 	printf("\nins 0 %d\nins 1 %d\n", ins[0].instruction, ins[1].instruction);
@@ -76,6 +88,8 @@ t_ins	*test(t_node *lst, int *sorted, int last)
 	else
 		ins[1].error = 1;
 	printf("\nins 0 %d\nins 1 %d\n", ins[0].instruction, ins[1].instruction);
+	printf("\nins[0] times = %ld ins[1] times = %ld\n", ins[0].times,
+		ins[1].times);
 	to_do_first(lst, ins);
 	return (ins);
 }
