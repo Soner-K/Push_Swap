@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   find_pos.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:09:33 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 14:36:14 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/22 14:24:02 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/22 14:25:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-long	ft_lstsize(t_node *lst)
+long	find_pos(t_node *lst, int value)
 {
-	int	i;
+	long	i;
 
 	i = 0;
-	if (!lst)
-		return (0);
 	while (lst)
 	{
-		lst = lst->next;
+		if (lst->data == value)
+			return (i);
 		i++;
+		lst = lst->next;
 	}
-	return (i);
+	return (-1);
 }

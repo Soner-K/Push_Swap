@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 10:42:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:15:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,11 @@ typedef struct s_pairs
 
 typedef struct s_ins
 {
-	char				instruction;
-	char				error;
-	long				times;
-}						t_ins;
+	char			instruction;
+	char			error;
+	int				value;
+	long			times;
+}					t_ins;
 
 t_node				*ft_lstnew(int data);
 t_node				*ft_lstlast(t_node *lst);
@@ -113,7 +114,7 @@ void				ft_bzero(void *s, size_t n);
 char				*to_string(int ac, char **av);
 t_node				*create_list(int ac, char **av, int i);
 void				clear(char **tab);
-int					ft_lstsize(t_node *lst);
+long				ft_lstsize(t_node *lst);
 
 // sorting and finding
 int					*create_tab(int ac, char **av, int *size_tab);
@@ -131,6 +132,6 @@ t_ins				best_rotate_pairs(t_node *lst, t_pairs pairs);
 t_ins				best_remaining(t_node *lst, int lstsize, int last);
 t_ins				find_value(t_node *lst, int value, size_t i);
 t_ins				*test(t_node *lst, int *sorted, int last);
-
+long				find_pos(t_node *lst, int value);
 int					ft_strcmp(const char *s1, const char *s2);
 #endif

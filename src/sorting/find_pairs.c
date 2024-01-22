@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:10:22 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/18 14:18:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:49:29 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_pairs	find_pairs(t_node *lst, int *sorted, int last)
 		lst = lst->next;
 	}
 	if (pairs.pos_first > -1 && pairs.pos_second > -1)
-		pairs.gap = ft_abs(pairs.pos_first - pairs.pos_second);
-	return (pairs);
+		pairs.gap = ft_abs(pairs.pos_first - pairs.pos_second); 
+		/*pb en cas derreur de un mais pas de l'autre et negatif*/
+	return (free(tab), pairs);
 }

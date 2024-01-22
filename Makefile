@@ -40,8 +40,10 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/sorting/best_rotate_min.c \
 				src/sorting/find_index_min.c \
 				src/sorting/find_pairs.c \
+				src/sorting/best_rotate_pairs.c \
 				src/sorting/find_value.c \
 				src/sorting/test.c \
+				src/sorting/find_pos.c \
 				#src/sorting/best_rotate_pairs.c \
 				src/sorting/best_remaining.c \
 
@@ -68,5 +70,8 @@ fclean		:	clean
 				@rm -f $(NAME)
 
 tidy		:	$(NAME) clean
+
+nowall		:	$(SRC_OBJ)
+				@$(CC) $^ -o $@ -g
 
 re			:	fclean all

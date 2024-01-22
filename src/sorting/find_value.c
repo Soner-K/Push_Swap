@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:34:57 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 11:04:16 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:19:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_ins	find_value(t_node *lst, int value, size_t i)
 	
 	lstsize = ft_lstsize(lst);
 	count = 0;
+	ins.value = value;
 	first = lst;
 	while (lst)
 	{
