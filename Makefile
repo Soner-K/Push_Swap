@@ -41,6 +41,7 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/sorting/find_index_min.c \
 				src/sorting/find_pairs.c \
 				src/sorting/find_value.c \
+				src/sorting/test.c \
 				#src/sorting/best_rotate_pairs.c \
 				src/sorting/best_remaining.c \
 

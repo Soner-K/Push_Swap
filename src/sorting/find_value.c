@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:34:57 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/18 17:23:11 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:04:16 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@
 	
 // }
 
+/* modifier cette fonction en tenant conmpte qu rra = lstsize-index
+et ra = index*/
 t_ins	find_value(t_node *lst, int value, size_t i)
 {
-	t_ins	ins;
-	t_node	*first;
-	size_t	lstsize;
-	int		count;
+	t_ins		ins;
+	t_node		*first;
+	size_t		lstsize;
+	long		count;
 	
 	lstsize = ft_lstsize(lst);
 	count = 0;

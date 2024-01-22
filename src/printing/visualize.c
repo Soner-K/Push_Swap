@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/18 18:08:59 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:17:50 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	play(int ac, char **av)
 	char	str[6];
 	char	*str2;
 	int		last;
-	t_ins	ins;
+	// t_ins	*ins;
 
 	// t_pairs	pairs;
 	// t_ins	ins;
@@ -104,11 +104,18 @@ void	play(int ac, char **av)
 			// ins = best_rotate_min(stack_a, "next_min", last);
 			// printf("Do %d %d times (nm) \n", ins.instruction, ins.times);
 			// ins = best_rotate_min(stack_a, "min", last);
-			ins = find_value(stack_a, stack_a->sorted[find_index_min(stack_a,
-						stack_a->sorted, stack_a->sorted[last - 1])], 0);
-			printf("Do %d %d times (min) \n", ins.instruction, ins.times);
-			printf("Index of tab is %ld\n", find_index_min(stack_a,
-					stack_a->sorted, stack_a->sorted[last - 1]));
+			// ins = find_value(stack_a, stack_a->sorted[find_index_min(stack_a,
+			// 			stack_a->sorted, stack_a->sorted[last - 1])], 0);
+			// printf("Do %d %d times (min) \n", ins.instruction, ins.times);
+			// printf("Index of tab is %ld\n", find_index_min(stack_a,
+			// 		stack_a->sorted, stack_a->sorted[last - 1]));
+			// ins = test(stack_a, stack_a->sorted, 657);
+			// 	printf("Instructions first min = %d et %ld fois\n",
+			// 		ins[0].instruction,
+			// 		ins[0].times);
+			// 	printf("Instructions second min = %d et %ld fois\n",
+			// 		ins[1].instruction,
+			// 		ins[1].times);
 			// pairs = find_pairs(stack_a, stack_a->sorted, last);
 			// printf("pair f = %d pair s = %d. Gap = %ld\n", pairs.pos_first,
 			// 	pairs.pos_second, pairs.gap);
@@ -116,9 +123,9 @@ void	play(int ac, char **av)
 			// 	ins = best_rotate_pairs(stack_a, pairs);
 			// remaining = best_remaining(stack_a, 10, last);
 			// printf("instruction = %d, times %d\n", ins.instruction,
-				// ins.times);
+			// ins.times);
 			// printf("instruction_remain = %d, times %d\n",
-				// remaining.instruction,
+			// remaining.instruction,
 			// 	remaining.times);
 		}
 		read(1, str, 4);
