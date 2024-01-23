@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 15:15:39 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:07:44 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
-# define NO_CONVERSION 0 /**/
+# define NO_CONVERSION 0
 
 # define SA 1
 # define SB 2
@@ -44,30 +44,6 @@ typedef struct s_node
 	struct s_node	*next;
 }					t_node;
 
-typedef struct s_min
-{
-	int				value;
-	size_t			gap;
-}					t_min;
-
-typedef struct s_pairs
-{
-	int				first;
-	int				second;
-	int				pos_first;
-	int				pos_second;
-	long			gap;
-}					t_pairs;
-
-// typedef struct s_ins
-// {
-// 	char			instruction_f;
-// 	int				times_f;
-// 	char			instruction_s;
-// 	int				times_s;
-// 	char			error;
-// }					t_ins;
-
 typedef struct s_ins
 {
 	char			instruction;
@@ -89,6 +65,7 @@ int					ft_strlen(char *s);
 int					len_tab(char **av);
 int					min(int a, int b);
 int					max(int a, int b, char *changed);
+int					ft_strcmp(const char *s1, const char *s2);
 
 void				play(int ac, char **av);
 
@@ -123,15 +100,8 @@ int					*create_and_sort(int ac, char **av, int size);
 int					binary_search(int *tab, int right, int value);
 
 // algorithm
-t_min				find_next_min(t_node *lst);
-t_min				find_min(t_node *lst, int *sorted, int size);
-t_ins				best_rotate_min(t_node *lst, char *mode, int size);
-long				find_index_min(t_node *lst, int *sorted, int last);
-t_pairs				find_pairs(t_node *lst, int *sorted, int last);
-t_ins				best_rotate_pairs(t_node *lst, t_pairs pairs);
-t_ins				best_remaining(t_node *lst, int lstsize, int last);
 t_ins				find_value(t_node *lst, int value, size_t i);
-t_ins				*test(t_node *lst, int *sorted, int last);
+t_ins				*best_pairs(t_node *lst, int *sorted, int last, long size);
 long				find_pos(t_node *lst, int value);
-int					ft_strcmp(const char *s1, const char *s2);
+long				find_index_min(t_node *lst, int *sorted, int last);
 #endif

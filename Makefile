@@ -33,19 +33,10 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/quicksort/create_tab.c \
 				src/quicksort/quicksort.c \
 				\
-				src/binary_search/binary_search.c \
-				\
-				src/sorting/find_next_min.c \
-				src/sorting/find_min.c \
-				src/sorting/best_rotate_min.c \
-				src/sorting/find_index_min.c \
-				src/sorting/find_pairs.c \
-				src/sorting/best_rotate_pairs.c \
 				src/sorting/find_value.c \
-				src/sorting/test.c \
 				src/sorting/find_pos.c \
-				#src/sorting/best_rotate_pairs.c \
-				src/sorting/best_remaining.c \
+				src/sorting/find_index_min.c \
+				src/sorting/best_pairs.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 
@@ -67,7 +58,7 @@ clean		:
 				@rm -f $(SRC_OBJ) a.out
 
 fclean		:	clean
-				@rm -f $(NAME)
+				@rm -f $(NAME) nowall
 
 tidy		:	$(NAME) clean
 

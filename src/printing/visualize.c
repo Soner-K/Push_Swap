@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/22 14:57:13 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:08:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,12 @@ void	play(int ac, char **av)
 	int		last;
 	int		i;
 	t_ins	*ins;
-	
+
 	i = 0;
 	str2 = NULL;
 	stack_a = create_list(ac, av, 0);
 	stack_b = NULL;
-	last = 10;
+	last = 9;
 	print_list(stack_a, NULL);
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
 	printf("\n");
@@ -99,10 +99,13 @@ void	play(int ac, char **av)
 	{
 		if (stack_a && i != 1)
 		{
-			ins = test(stack_a, stack_a->sorted, stack_a->sorted[last - 1]);
+			ins = best_pairs(stack_a, stack_a->sorted, stack_a->sorted[last
+					- 1], last);
 			i = 1;
-			printf("Ins 1 = %d et times %ld\n", ins[0].instruction, ins[0].times);
-			printf("Ins 2 = %d et times %ld\n", ins[1].instruction, ins[1].times);
+			printf("Do ins 1 = %d et times %ld\n", ins[0].instruction,
+				ins[0].times);
+			printf("Do ins 2 = %d et times %ld\n", ins[1].instruction,
+				ins[1].times);
 		}
 		read(1, str, 4);
 		str2 = ft_fuse(str2, str);
