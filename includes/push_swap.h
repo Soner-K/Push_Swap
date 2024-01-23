@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 13:07:44 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:22:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ int					binary_search(int *tab, int right, int value);
 // algorithm
 t_ins				find_value(t_node *lst, int value, size_t i);
 t_ins				*best_pairs(t_node *lst, int *sorted, int last, long size);
-long				find_pos(t_node *lst, int value);
+long				find_pos_in_stack(t_node *lst, int value);
 long				find_index_min(t_node *lst, int *sorted, int last);
 #endif

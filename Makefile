@@ -34,7 +34,7 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/quicksort/quicksort.c \
 				\
 				src/sorting/find_value.c \
-				src/sorting/find_pos.c \
+				src/sorting/find_pos_in_stack.c \
 				src/sorting/find_index_min.c \
 				src/sorting/best_pairs.c \
 
@@ -55,7 +55,7 @@ $(NAME)		:	$(SRC_OBJ)
 				@$(CC) $(CFLAGS) $^ -o $@ -g
 
 clean		:
-				@rm -f $(SRC_OBJ) a.out
+				@rm -f $(SRC_OBJ) a.out *.o
 
 fclean		:	clean
 				@rm -f $(NAME) nowall

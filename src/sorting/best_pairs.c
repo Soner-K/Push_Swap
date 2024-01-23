@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 09:42:30 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 13:02:37 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:22:58 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	to_top(t_node *lst, t_ins *ins)
 	long	pos;
 
 	lstsize = ft_lstsize(lst);
-	pos = find_pos(lst, ins[1].value);
+	pos = find_pos_in_stack(lst, ins[1].value);
 	if (ins[0].instruction == RRA)
 		pos += ins[0].times;
 	else

@@ -1,5 +1,6 @@
 *.out
 push_swap
+nowall
 *.o
 *.vsc*
 crashtest
