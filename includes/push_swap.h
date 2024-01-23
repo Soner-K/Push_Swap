@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 13:22:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:13:12 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,22 @@ int					len_tab(char **av);
 int					min(int a, int b);
 int					max(int a, int b, char *changed);
 int					ft_strcmp(const char *s1, const char *s2);
+void				ft_putstr(char *s);
 
 void				play(int ac, char **av);
 
 // instructions
-void				sa(t_node **first_a);
-void				sb(t_node **first_b);
-void				ss(t_node **first_a, t_node **first_b);
-void				pa(t_node **store, t_node **push);
-void				pb(t_node **store, t_node **push);
-void				ra(t_node **stack_a);
-void				rb(t_node **first_node);
-void				rr(t_node **first_a, t_node **first_b);
-void				rra(t_node **first_node);
-void				rrb(t_node **first_node);
-void				rrr(t_node **first_a, t_node **first_b);
+void				sa(t_node **first_a, char *s);
+void				sb(t_node **first_b, char *s);
+void				ss(t_node **first_a, t_node **first_b, char *s);
+void				pa(t_node **store, t_node **push, char *s);
+void				pb(t_node **store, t_node **push, char *s);
+void				ra(t_node **stack_a, char *s);
+void				rb(t_node **first_node, char *s);
+void				rr(t_node **first_a, t_node **first_b, char *s);
+void				rra(t_node **first_node, char *s);
+void				rrb(t_node **first_node, char *s);
+void				rrr(t_node **first_a, t_node **first_b, char *s);
 
 // parsing
 long				ft_atol(const char *nptr);
@@ -97,11 +98,12 @@ long				ft_lstsize(t_node *lst);
 int					*create_tab(int ac, char **av, int *size_tab);
 void				quicksort(int *tab, int low, int high);
 int					*create_and_sort(int ac, char **av, int size);
-int					binary_search(int *tab, int right, int value);
 
 // algorithm
-t_ins				find_value(t_node *lst, int value, size_t i);
+t_ins				best_rotate(t_node *lst, int value);
 t_ins				*best_pairs(t_node *lst, int *sorted, int last, long size);
 long				find_pos_in_stack(t_node *lst, int value);
 long				find_index_min(t_node *lst, int *sorted, int last);
+void				exec_rotate(t_node **stack_a, t_node **stack_b, t_ins *ins);
+void				exec_push(t_node **stack_a, t_node **stack_b, char push_b);
 #endif

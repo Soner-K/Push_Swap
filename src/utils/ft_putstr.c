@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_pos_in_stack.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:24:02 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 13:47:58 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/23 16:06:37 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/23 16:08:12 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*Finds value's pos in stack. If value isn't found, returns -1.*/
-long	find_pos_in_stack(t_node *lst, int value)
+void	ft_putstr(char *s)
 {
-	long	i;
+	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
-	while (lst)
-	{
-		if (lst->data == value)
-			return (i);
-		i++;
-		lst = lst->next;
-	}
-	return (-1);
+	while (s[i])
+		write(1, &s[i++], 1);
 }

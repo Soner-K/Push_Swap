@@ -26,6 +26,7 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/utils/create_and_sort.c \
 				src/utils/min.c \
 				src/utils/max.c \
+				src/utils/ft_putstr.c \
 				\
 				src/printing/print_list.c \
 				src/printing/visualize.c \
@@ -33,10 +34,11 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/quicksort/create_tab.c \
 				src/quicksort/quicksort.c \
 				\
-				src/sorting/find_value.c \
+				src/sorting/best_rotate.c \
 				src/sorting/find_pos_in_stack.c \
 				src/sorting/find_index_min.c \
 				src/sorting/best_pairs.c \
+				src/sorting/exec_instruction.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 
@@ -52,7 +54,7 @@ all			:	$(NAME)
 				@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)		:	$(SRC_OBJ)
-				@$(CC) $(CFLAGS) $^ -o $@ -g
+				@$(CC) -g $(CFLAGS) $^ -o $@
 
 clean		:
 				@rm -f $(SRC_OBJ) a.out *.o

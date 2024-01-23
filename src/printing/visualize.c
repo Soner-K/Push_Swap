@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 13:08:24 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:15:55 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,27 @@ static int	check(const char *s1, const char *s2)
 static void	execute(char *str, t_node **stack_a, t_node **stack_b)
 {
 	if (!check(str, "sa"))
-		return (sa(stack_a));
+		return (sa(stack_a, NULL));
 	if (!check(str, "sb"))
-		return (sb(stack_b));
+		return (sb(stack_b, NULL));
 	if (!check(str, "ss"))
-		return (ss(stack_a, stack_b));
+		return (ss(stack_a, stack_b, NULL));
 	if (!check(str, "pa"))
-		return (pa(stack_a, stack_b));
+		return (pa(stack_a, stack_b, NULL));
 	if (!check(str, "pb"))
-		return (pb(stack_b, stack_a));
+		return (pb(stack_b, stack_a, NULL));
 	if (!check(str, "ra"))
-		return (ra(stack_a));
+		return (ra(stack_a, NULL));
 	if (!check(str, "rb"))
-		return (rb(stack_b));
+		return (rb(stack_b, NULL));
 	if (!check(str, "rrr"))
-		return (rrr(stack_a, stack_b));
+		return (rrr(stack_a, stack_b, NULL));
 	if (!check(str, "rr") && (check(str, "rra") && check(str, "rrb")))
-		return (rr(stack_a, stack_b));
+		return (rr(stack_a, stack_b, NULL));
 	if (!check(str, "rra"))
-		return (rra(stack_a));
+		return (rra(stack_a, NULL));
 	if (!check(str, "rrb"))
-		return (rrb(stack_b));
+		return (rrb(stack_b, NULL));
 	write(1, "Error\n", 6);
 }
 
@@ -124,7 +124,7 @@ void	play(int ac, char **av)
 	clear_list(&stack_b, 0);
 }
 
-int	main(int ac, char **av)
-{
-	play(ac, av);
-}
+// int	main(int ac, char **av)
+// {
+// 	play(ac, av);
+// }
