@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 16:13:12 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:27:38 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,17 @@ void				ft_putstr(char *s);
 void				play(int ac, char **av);
 
 // instructions
-void				sa(t_node **first_a, char *s);
-void				sb(t_node **first_b, char *s);
-void				ss(t_node **first_a, t_node **first_b, char *s);
-void				pa(t_node **store, t_node **push, char *s);
-void				pb(t_node **store, t_node **push, char *s);
-void				ra(t_node **stack_a, char *s);
-void				rb(t_node **first_node, char *s);
-void				rr(t_node **first_a, t_node **first_b, char *s);
-void				rra(t_node **first_node, char *s);
-void				rrb(t_node **first_node, char *s);
-void				rrr(t_node **first_a, t_node **first_b, char *s);
+void				sa(t_node **first_a);
+void				sb(t_node **first_b);
+void				ss(t_node **first_a, t_node **first_b);
+void				pa(t_node **store, t_node **push);
+void				pb(t_node **store, t_node **push);
+void				ra(t_node **stack_a);
+void				rb(t_node **first_node);
+void				rr(t_node **first_a, t_node **first_b);
+void				rra(t_node **first_node);
+void				rrb(t_node **first_node);
+void				rrr(t_node **first_a, t_node **first_b);
 
 // parsing
 long				ft_atol(const char *nptr);

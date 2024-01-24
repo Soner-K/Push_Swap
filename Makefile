@@ -1,6 +1,7 @@
-SRC			= 	src/instructions/instructions_a.c \
- 				src/instructions/instructions_b.c \
-				src/instructions/instructions.c \
+SRC			= 	src/instructions/push.c \
+ 				src/instructions/swap.c \
+				src/instructions/rotate.c \
+				src/instructions/reverse_rotate.c \
 				\
 				src/parsing/parsing.c \
 				src/parsing/ft_bzero.c \
@@ -34,11 +35,11 @@ SRC			= 	src/instructions/instructions_a.c \
 				src/quicksort/create_tab.c \
 				src/quicksort/quicksort.c \
 				\
-				src/sorting/best_rotate.c \
-				src/sorting/find_pos_in_stack.c \
-				src/sorting/find_index_min.c \
-				src/sorting/best_pairs.c \
-				src/sorting/exec_instruction.c \
+				# src/sorting/best_rotate.c \
+				# src/sorting/find_pos_in_stack.c \
+				# src/sorting/find_index_min.c \
+				# src/sorting/best_pairs.c \
+				# src/sorting/exec_instruction.c \
 
 SRC_OBJ		= 	$(SRC:.c=.o)
 

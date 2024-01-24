@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:41:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 18:41:29 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:51:25 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,26 +87,26 @@ void	exec_rotate(t_node **stack_a, t_node **stack_b, t_ins *ins)
 	free(ins);
 }
 
-int	main(int ac, char **av)
-{
-	t_node	*lst;
-	t_node	*lst2;
-	t_ins	*ins;
-	long	lstsize;
+// int	main(int ac, char **av)
+// {
+// 	t_node	*lst;
+// 	t_node	*lst2;
+// 	t_ins	*ins;
+// 	long	lstsize;
 
-	lst = create_list(ac, av, 0);
-	if (!lst)
-		return (-1);
-	lst2 = NULL;
-	lstsize = ft_lstsize(lst);
-	// print_list(lst, lst2);
-	// printf("\n\n\n");
-	while (lstsize > 4)
-	{
-		ins = best_pairs(lst, lst->sorted, lst->sorted[ac - 2], ac - 2);
-		exec_rotate(&lst, &lst2, ins);
-		lstsize -= 2;
-	}
-	printf("\n\n\n");
-	print_list(lst, lst2);
-}
+// 	lst = create_list(ac, av, 0);
+// 	if (!lst)
+// 		return (-1);
+// 	lst2 = NULL;
+// 	lstsize = ft_lstsize(lst);
+// 	// print_list(lst, lst2);
+// 	// printf("\n\n\n");
+// 	while (lstsize > 4)
+// 	{
+// 		ins = best_pairs(lst, lst->sorted, lst->sorted[ac - 2], ac - 2);
+// 		exec_rotate(&lst, &lst2, ins);
+// 		lstsize -= 2;
+// 	}
+// 	printf("\n\n\n");
+// 	print_list(lst, lst2);
+// }
