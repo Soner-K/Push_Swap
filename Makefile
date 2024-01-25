@@ -32,11 +32,15 @@ SRC			= 	src/instructions/push.c \
 				src/printing/print_list.c \
 				src/printing/visualize.c \
 				\
+				src/execute/exec.c \
+				\
 				src/quicksort/create_tab.c \
 				src/quicksort/quicksort.c \
 				\
+				src/sorting/alg_three.c \
+				src/sorting/smallest_cost.c \
+				src/sorting/find_pos_in_stack.c \
 				# src/sorting/best_rotate.c \
-				# src/sorting/find_pos_in_stack.c \
 				# src/sorting/find_index_min.c \
 				# src/sorting/best_pairs.c \
 				# src/sorting/exec_instruction.c \

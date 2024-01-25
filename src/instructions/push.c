@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:12:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/24 15:19:36 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:55:29 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,31 @@
  * to which the node will be pushed.
  * @param push The adress of the first node of the stack
  * from which the node will be pushed.
- * @returns void. Doesn't do anything if there is no node in push.
+ * @returns  Returns 0 if there is no node in push.
+ * Returns 1 otherwise (the operation was successful).
  */
-static void	lst_push(t_node **store, t_node **push)
+static char	lst_push(t_node **store, t_node **push)
 {
 	t_node	*tmp;
 
 	if (!(*push))
-		return ;
+		return (0);
 	tmp = *push;
 	*push = (*push)->next;
 	if (*push)
 		(*push)->prev = NULL;
 	ft_lstadd_front(store, tmp);
+	return (1);
 }
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {
-	lst_push(stack_a, stack_b);
-	ft_putstr("pa\n");
+	if (lst_push(stack_a, stack_b))
+		ft_putstr("pa\n");
 }
 
 void	pb(t_node **stack_b, t_node **stack_a)
 {
-	lst_push(stack_b, stack_a);
+	if (lst_push(stack_b, stack_a))
 	ft_putstr("pb\n");
 }

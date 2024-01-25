@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/24 15:27:38 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:46:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
+
+typedef void		(*t_exec)(t_node **, t_node **);
+
+typedef void		(*t_exec_swap)(t_node **);
 
 typedef struct s_ins
 {
@@ -98,6 +102,10 @@ long				ft_lstsize(t_node *lst);
 int					*create_tab(int ac, char **av, int *size_tab);
 void				quicksort(int *tab, int low, int high);
 int					*create_and_sort(int ac, char **av, int size);
+long				binary_search(int *tab, long right, long value);
+
+void				do_it_one(t_node **stack, t_exec_swap swap_one);
+void				do_it_two(t_node **a, t_node **b, t_exec ins, long times);
 
 // algorithm
 t_ins				best_rotate(t_node *lst, int value);
@@ -106,4 +114,7 @@ long				find_pos_in_stack(t_node *lst, int value);
 long				find_index_min(t_node *lst, int *sorted, int last);
 void				exec_rotate(t_node **stack_a, t_node **stack_b, t_ins *ins);
 void				exec_push(t_node **stack_a, t_node **stack_b, char push_b);
+void				sort_for_three(t_node **stack_a);
+long				find_cost(t_node *stack_a, t_node *stack_b);
+long				find_closest_pos(int value, t_node *stack_b);
 #endif

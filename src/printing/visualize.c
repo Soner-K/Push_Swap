@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/24 15:29:16 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:50:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,27 @@ static int	check(const char *s1, const char *s2)
 static void	execute(char *str, t_node **stack_a, t_node **stack_b)
 {
 	if (!check(str, "sa"))
-		return (sa(stack_a));
+		return (do_it_one(stack_a, sa));
 	if (!check(str, "sb"))
-		return (sb(stack_b));
+		return (do_it_one(stack_b, sb));
 	if (!check(str, "ss"))
-		return (ss(stack_a, stack_b));
+		return (do_it_two(stack_a, stack_b, ss, 1));
 	if (!check(str, "pa"))
-		return (pa(stack_a, stack_b));
+		return (do_it_two(stack_a, stack_b, pa, 1));
 	if (!check(str, "pb"))
-		return (pb(stack_b, stack_a));
+		return (do_it_two(stack_b, stack_a, pb, 1));
 	if (!check(str, "ra"))
-		return (ra(stack_a));
+		return (do_it_one(stack_a, ra));
 	if (!check(str, "rb"))
-		return (rb(stack_b));
+		return (do_it_one(stack_b, rb));
 	if (!check(str, "rrr"))
-		return (rrr(stack_a, stack_b));
+		return (do_it_two(stack_a, stack_b, rrr, 1));
 	if (!check(str, "rr") && (check(str, "rra") && check(str, "rrb")))
-		return (rr(stack_a, stack_b));
+		return (do_it_two(stack_a, stack_b, rr, 1));
 	if (!check(str, "rra"))
-		return (rra(stack_a));
+		return (do_it_one(stack_a, rra));
 	if (!check(str, "rrb"))
-		return (rrb(stack_b));
+		return (do_it_one(stack_b, rrb));
 	write(1, "Error\n", 6);
 }
 
@@ -83,30 +83,15 @@ void	play(int ac, char **av)
 	t_node	*stack_b;
 	char	str[6];
 	char	*str2;
-	// int		last;
-	// int		i;
-	// t_ins	*ins;
-
-	// i = 0;
+	
 	str2 = NULL;
 	stack_a = create_list(ac, av, 0);
 	stack_b = NULL;
-	// last = 9;
 	print_list(stack_a, NULL);
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
 	printf("\n");
 	while (1)
 	{
-		// if (stack_a && i != 1)
-		// {
-		// 	ins = best_pairs(stack_a, stack_a->sorted, stack_a->sorted[last
-		// 			- 1], last);
-		// 	i = 1;
-		// 	printf("Do ins 1 = %d et times %ld\n", ins[0].instruction,
-		// 		ins[0].times);
-		// 	printf("Do ins 2 = %d et times %ld\n", ins[1].instruction,
-		// 		ins[1].times);
-		// }
 		read(1, str, 4);
 		str2 = ft_fuse(str2, str);
 		if (!check(str, "stop"))
@@ -114,7 +99,7 @@ void	play(int ac, char **av)
 		execute(str, &stack_a, &stack_b);
 		ft_bzero(str, 4);
 		print_list(stack_a, stack_b);
-		// if (find())
+		printf("closest's pos %ld\n", find_closest_pos(stack_a->data, stack_b));
 	}
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
 	printf("\nCOMMANDES :\n%s\n", str2);
