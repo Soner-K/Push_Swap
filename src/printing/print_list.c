@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:09:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 16:39:01 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:13:25 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	print_list(t_node *first_a, t_node *first_b)
 {
-	printf("Stack A\t\tStack B\n");
+	printf("Stack A\t\t\t\tStack B\n");
 	while (first_a != NULL || first_b != NULL)
 	{
 		if (first_a != NULL)
 		{
-			printf("%d", first_a->data);
+			printf("%ld", first_a->data);
 			first_a = first_a->next;
 		}
-		printf("\t\t");
+		printf("\t\t\t\t");
 		if (first_b != NULL)
 		{
-			printf("%d", first_b->data);
+			printf("%ld", first_b->data);
 			first_b = first_b->next;
 		}
 		printf("\n");

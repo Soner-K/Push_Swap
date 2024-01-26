@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:20:56 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 11:56:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:37:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Swaps the data of the first two nodes of a list.
- * @param stack Adress of the stack's first node.
+ * @param stack Address of the stack's first node.
  * @returns Returns 0 if stack's size is strictly less than 2.
  * Otherwise, returns 1 (the operation was successful).
  */

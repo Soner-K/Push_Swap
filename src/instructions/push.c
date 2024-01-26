@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:12:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 11:55:29 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:37:16 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /**
  * @brief Pushes the top element of push's stack into store's stack.
- * @param store The adress of the first node of the stack
+ * @param store The address of the first node of the stack
  * to which the node will be pushed.
- * @param push The adress of the first node of the stack
+ * @param push The address of the first node of the stack
  * from which the node will be pushed.
  * @returns  Returns 0 if there is no node in push.
  * Returns 1 otherwise (the operation was successful).

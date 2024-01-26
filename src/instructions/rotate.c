@@ -6,16 +6,16 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:03:01 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 11:56:04 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:37:01 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /**
- * @brief Shift up all the nodes once. The first node becomes
+ * @brief Shifts up all the nodes once. The first node becomes
  * the last node in the stack.
- * @param stack Adress of the first node of stack.
+ * @param stack Address of the first node of stack.
  * @returns If there is no element in first, returns 0.
  * Returns 1 otherwise (the operation was successful).
  */

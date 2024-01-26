@@ -2,3 +2,6 @@ Improving the parsing :
 Cases where there are number and letter (7a) and "4 5"6" 1"
 hassoul
 
+HAndling cases where closest pos is 0 (regarding new_instructions)
+
+Improving the use of lstsize. 

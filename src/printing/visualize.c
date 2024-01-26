@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 18:50:26 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:26:14 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,12 @@ static void	print_tab(int *tab, int last)
 
 void	play(int ac, char **av)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
-	char	str[6];
-	char	*str2;
-	
+	t_node *stack_a;
+	t_node *stack_b;
+	t_cost smol;
+	char str[6];
+	char *str2;
+
 	str2 = NULL;
 	stack_a = create_list(ac, av, 0);
 	stack_b = NULL;
@@ -99,7 +100,10 @@ void	play(int ac, char **av)
 		execute(str, &stack_a, &stack_b);
 		ft_bzero(str, 4);
 		print_list(stack_a, stack_b);
-		printf("closest's pos %ld\n", find_closest_pos(stack_a->data, stack_b));
+		smol = find_smallest_cost(stack_a, stack_b);
+		printf("Do instruction %d %d times\n", smol.ins_f, smol.times_f);
+		printf("Do instruction %d %d times\n", smol.ins_s, smol.times_s);
+		printf("closest pos %ld\n", find_closest_pos_b(stack_a->data, stack_b));
 	}
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
 	printf("\nCOMMANDES :\n%s\n", str2);

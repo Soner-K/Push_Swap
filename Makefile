@@ -25,8 +25,6 @@ SRC			= 	src/instructions/push.c \
 				src/utils/len_tab.c \
 				src/utils/ft_lstfirst.c \
 				src/utils/create_and_sort.c \
-				src/utils/min.c \
-				src/utils/max.c \
 				src/utils/ft_putstr.c \
 				\
 				src/printing/print_list.c \

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 18:46:39 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:26:20 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
+# define LONG_MAX 9223372036854775807
 # define NO_CONVERSION 0
 
-# define SA 1
+# define SWAP 1
 # define SB 2
 # define SS 3
 
@@ -38,28 +39,28 @@
 
 typedef struct s_node
 {
-	int				data;
+	long			data;
 	int				*sorted;
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
 
+typedef struct s_cost
+{
+	int				times_f;
+	int				times_s;
+	char			ins_f;
+	char			ins_s;
+	char			error;
+}					t_cost;
+
 typedef void		(*t_exec)(t_node **, t_node **);
 
 typedef void		(*t_exec_swap)(t_node **);
 
-typedef struct s_ins
-{
-	char			instruction;
-	char			error;
-	int				value;
-	long			times;
-}					t_ins;
-
 t_node				*ft_lstnew(int data);
 t_node				*ft_lstlast(t_node *lst);
 t_node				*ft_lstfirst(t_node *lst);
-void				add_node(t_node **node, t_node *insert);
 void				clear_list(t_node **lst, char free_sorted);
 void				ft_lstadd_front(t_node **lst, t_node *new);
 void				ft_lstadd_back(t_node **lst, t_node *new);
@@ -67,8 +68,6 @@ void				print_list(t_node *first_a, t_node *first_b);
 char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
 int					len_tab(char **av);
-int					min(int a, int b);
-int					max(int a, int b, char *changed);
 int					ft_strcmp(const char *s1, const char *s2);
 void				ft_putstr(char *s);
 
@@ -108,13 +107,8 @@ void				do_it_one(t_node **stack, t_exec_swap swap_one);
 void				do_it_two(t_node **a, t_node **b, t_exec ins, long times);
 
 // algorithm
-t_ins				best_rotate(t_node *lst, int value);
-t_ins				*best_pairs(t_node *lst, int *sorted, int last, long size);
-long				find_pos_in_stack(t_node *lst, int value);
-long				find_index_min(t_node *lst, int *sorted, int last);
-void				exec_rotate(t_node **stack_a, t_node **stack_b, t_ins *ins);
-void				exec_push(t_node **stack_a, t_node **stack_b, char push_b);
+long				find_pos_in_stack(t_node *lst, long value);
 void				sort_for_three(t_node **stack_a);
-long				find_cost(t_node *stack_a, t_node *stack_b);
-long				find_closest_pos(int value, t_node *stack_b);
+t_cost				find_smallest_cost(t_node *stack_a, t_node *stack_b);
+long				find_closest_pos_b(int value, t_node *stack_b);
 #endif
