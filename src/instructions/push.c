@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:12:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 15:37:16 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:18:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ static char	lst_push(t_node **store, t_node **push)
 void	pa(t_node **stack_a, t_node **stack_b)
 {
 	if (lst_push(stack_a, stack_b))
-		ft_putstr("pa\n");
+		ft_putstr("pa\n", 1);
 }
 
 void	pb(t_node **stack_b, t_node **stack_a)
 {
 	if (lst_push(stack_b, stack_a))
-	ft_putstr("pb\n");
+		ft_putstr("pb\n", 1);
 }

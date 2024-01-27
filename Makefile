@@ -3,11 +3,10 @@ SRC			= 	src/instructions/push.c \
 				src/instructions/rotate.c \
 				src/instructions/reverse_rotate.c \
 				\
-				src/parsing/parsing.c \
 				src/parsing/ft_bzero.c \
 				src/parsing/ft_calloc.c \
 				src/parsing/ft_split.c \
-				src/parsing/parsing.c \
+				src/parsing/create_list.c \
 				src/parsing/clear.c \
 				src/parsing/error.c \
 				src/parsing/ft_atol.c \
@@ -23,18 +22,11 @@ SRC			= 	src/instructions/push.c \
 				src/utils/ft_strcmp.c \
 				src/utils/ft_strlen.c \
 				src/utils/len_tab.c \
-				src/utils/ft_lstfirst.c \
-				src/utils/create_and_sort.c \
 				src/utils/ft_putstr.c \
 				src/utils/min.c \
-				\
-				src/printing/print_list.c \
-				src/printing/visualize.c \
+				src/utils/quit.c \
 				\
 				src/execute/exec.c \
-				\
-				src/quicksort/create_tab.c \
-				src/quicksort/quicksort.c \
 				\
 				src/sorting/alg_three.c \
 				src/sorting/smallest_cost_to_b.c \
@@ -42,11 +34,9 @@ SRC			= 	src/instructions/push.c \
 				src/sorting/to_top.c \
 				src/sorting/find_positions.c \
 				src/sorting/adjusted_instructions.c \
-				# src/sorting/best_rotate.c \
-				# src/sorting/find_index_min.c \
-				# src/sorting/best_pairs.c \
-				# src/sorting/exec_instruction.c \
-
+				src/sorting/sorting.c \
+				src/sorting/main.c \
+				
 SRC_OBJ		= 	$(SRC:.c=.o)
 
 CC			=	cc

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 13:57:53 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:29:08 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define LONG_MAX 9223372036854775807
 # define NO_CONVERSION 0
 
-# define SWAP 1
+# define SA 1
 # define SB 2
 # define SS 3
 
@@ -62,12 +62,12 @@ typedef struct s_sizes
 
 typedef void		(*t_exec)(t_node **, t_node **);
 
-typedef void		(*t_exec_swap)(t_node **);
+typedef void		(*t_exec_one)(t_node **);
 
 t_node				*ft_lstnew(int data);
 t_node				*ft_lstlast(t_node *lst);
 t_node				*ft_lstfirst(t_node *lst);
-void				clear_list(t_node **lst, char free_sorted);
+void				clear_list(t_node **lst);
 void				ft_lstadd_front(t_node **lst, t_node *new);
 void				ft_lstadd_back(t_node **lst, t_node *new);
 void				print_list(t_node *first_a, t_node *first_b);
@@ -75,8 +75,9 @@ char				*ft_fuse(char *s1, char *s2);
 int					ft_strlen(char *s);
 int					len_tab(char **av);
 int					ft_strcmp(const char *s1, const char *s2);
-void				ft_putstr(char *s);
+void				ft_putstr(char *s, int fd);
 int					min(int a, int b);
+void				ft_quit(void);
 
 void				play(int ac, char **av);
 
@@ -110,8 +111,11 @@ void				quicksort(int *tab, int low, int high);
 int					*create_and_sort(int ac, char **av, int size);
 long				binary_search(int *tab, long right, long value);
 
-void				do_it_one(t_node **stack, t_exec_swap swap_one);
-void				do_it_two(t_node **a, t_node **b, t_exec ins, long times);
+void				do_it_one(t_node **stack, t_exec_one ins, long times);
+void				do_it_two(t_node **a, t_node **b, t_cost set);
+
+void				do_it_second(t_node **a, t_node **b, t_cost set);
+void				do_it_first(t_node **a, t_node **b, t_cost set);
 
 // algorithm
 long				find_pos_in_stack(t_node *lst, long value);
@@ -125,4 +129,6 @@ t_cost				smallest_cost_to_a(t_node *a, t_sizes sizes, long value);
 long				closest_smallest_in_b(int value, t_node *stack_b);
 long				closest_biggest_in_a(int value, t_node *stack_a);
 t_cost				to_top(long pos, long lstsize, char a);
+void				sort(t_node **a, t_node **b, t_sizes *sizes);
+char				is_sorted(t_node *lst);
 #endif

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:09:29 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/25 17:17:03 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:31:06 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_node	*ft_lstnew(int data)
 
 	new = malloc(sizeof(t_node));
 	if (!new)
-		exit(1);
+		ft_quit();
 	new->data = data;
 	new->prev = NULL;
 	new->next = NULL;

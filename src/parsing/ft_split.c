@@ -6,12 +6,21 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/11 15:13:58 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:56:25 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+/**
+ * @brief Finds and returns a string that is between two given separators.
+ * @param s The string to iterate through.
+ * @param c The separator.
+ * @param pos A pointer containing the previous position
+ * of the given separator in s.
+ * @returns The substring between two separators.
+ * NULL if the allocation failed.
+ */
 static char	*ft_cut(char const *s, char c, size_t *pos)
 {
 	size_t	i;
@@ -36,6 +45,13 @@ static char	*ft_cut(char const *s, char c, size_t *pos)
 	return (str);
 }
 
+/**
+ * @brief Counts the words in a string, with a given char
+ * acting as a separator.
+ * @param s The string for which to count the words.
+ * @param c The separator.
+ * @returns The number of words.
+ */
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
@@ -54,6 +70,12 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
+/**
+ * @brief Free an array of strings, of a given size.
+ * @param tab A pointer to the first string of the array.
+ * @param size The number of pointers allocated in the array.
+ * @returns void.
+ */
 static void	delete(char **tab, size_t size)
 {
 	size_t	i;
@@ -68,6 +90,13 @@ static void	delete(char **tab, size_t size)
 	free(tab);
 }
 
+/**
+ * @brief Splits a string into an array of strings, with a char acting
+ * as a separator.
+ * @param s The string to split.
+ * @param c The separator.
+ * @returns The array of strings. NULL if any allocation failed.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

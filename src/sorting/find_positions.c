@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:42:00 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 14:11:35 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:00:36 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ long	find_min_pos(t_node *stack)
  */
 long	find_pos_in_stack(t_node *lst, long value)
 {
-	long i;
+	long	i;
 
-	if (value == LONG_MAX) // actualiser selon closest biggest
+	if (value == LONG_MAX || !lst)
 		return (-1);
 	i = 0;
 	while (lst)

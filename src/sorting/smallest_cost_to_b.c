@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:58:02 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 14:16:41 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:15:33 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	set(t_cost *cost)
+static void	set(t_cost *cost)
 {
 	cost->error = 0;
 	cost->ins_f = 0;
@@ -72,11 +72,10 @@ long	closest_smallest_in_b(int value, t_node *stack_b)
 	long	pos;
 	long	closest;
 
-	if (!stack_b) // necessaire?
+	if (!stack_b)
 		return (-1);
 	diff = LONG_MAX;
 	closest = LONG_MAX;
-	// pos = 0;
 	first = stack_b;
 	while (stack_b)
 	{
@@ -104,9 +103,9 @@ long	closest_smallest_in_b(int value, t_node *stack_b)
  */
 t_cost	smallest_cost_to_b(t_node *a, t_node *b, t_sizes sizes)
 {
-	t_cost smallest;
-	t_cost tmp;
-	long pos_a;
+	long	pos_a;
+	t_cost	smallest;
+	t_cost	tmp;
 
 	if (!a || !b)
 		return (smallest.error = 1, smallest);

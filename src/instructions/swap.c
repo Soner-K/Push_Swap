@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:20:56 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 15:37:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:24:55 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ static char	lst_swap(t_node **stack)
 void	sa(t_node **stack_a)
 {
 	if (lst_swap(stack_a))
-		ft_putstr("sa\n");
+		ft_putstr("sa\n", 1);
 }
 
 void	sb(t_node **stack_b)
 {
 	if (lst_swap(stack_b))
-		ft_putstr("sb\n");
+		ft_putstr("sb\n", 1);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
 	if (lst_swap(stack_a) && lst_swap(stack_b))
-		ft_putstr("ss\n");
+		ft_putstr("ss\n", 1);
 }

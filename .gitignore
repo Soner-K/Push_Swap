@@ -5,4 +5,6 @@ nowall
 *.vsc*
 crashtest
 turkish_alg
+checker_linux
+Push-Swap-Tester
 inutils

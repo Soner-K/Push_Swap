@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:19:45 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 15:37:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:24:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ static char	lst_reverse_rotate(t_node **stack)
 void	rra(t_node **first_a)
 {
 	if (lst_reverse_rotate(first_a))
-		ft_putstr("rra\n");
+		ft_putstr("rra\n", 1);
 }
 
 void	rrb(t_node **first_b)
 {
 	if (lst_reverse_rotate(first_b))
-		ft_putstr("rrb\n");
+		ft_putstr("rrb\n", 1);
 }
 
 void	rrr(t_node **first_a, t_node **first_b)
 {
 	if (lst_reverse_rotate(first_a) && lst_reverse_rotate(first_b))
-		ft_putstr("rrr\n");
+		ft_putstr("rrr\n", 1);
 }

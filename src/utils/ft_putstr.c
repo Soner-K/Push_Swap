@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:06:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/23 16:08:12 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:11:42 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *s, int fd)
 {
 	int	i;
 
@@ -20,5 +20,5 @@ void	ft_putstr(char *s)
 		return ;
 	i = 0;
 	while (s[i])
-		write(1, &s[i++], 1);
+		write(fd, &s[i++], 1);
 }

@@ -6,13 +6,34 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:19 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 12:31:22 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:01:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*Checks if there's any error like no valid numbers.*/
+static char	only_digits(char *str)
+{
+	short int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
+ * @brief Checks if there is any error in the array of strings that will
+ * be used for creating the stack.
+ * @param tab A pointer to an array of strings.
+ * @returns 1 if there is an error in the array, 0 otherwise.
+ */
 char	error(char **tab)
 {
 	int	i;
@@ -23,7 +44,8 @@ char	error(char **tab)
 	while (tab[i])
 	{
 		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN
-			|| (ft_atol(tab[i]) == NO_CONVERSION && tab[i][0] != '0'))
+			|| (ft_atol(tab[i]) == NO_CONVERSION && tab[i][0] != '0')
+			|| !only_digits(tab[i]))
 			return (clear(tab), 1);
 		while (tab[j])
 		{

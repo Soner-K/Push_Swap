@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:47:03 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 12:09:42 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:29:56 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ t_cost	new_rotate(t_cost a, t_cost b)
 		final.times_s = b.times_f - a.times_f;
 	}
 	else
+	{
+		final.ins_s = 0;
 		final.times_s = 0;
+	}
+	final.error = 0;
 	return (final);
 }
 
@@ -49,7 +53,7 @@ t_cost	new_rotate(t_cost a, t_cost b)
  */
 t_cost	new_reverse_rotate(t_cost a, t_cost b)
 {
-	t_cost final;
+	t_cost	final;
 
 	final.ins_f = RRR;
 	final.times_f = min(a.times_f, b.times_f);
@@ -64,6 +68,10 @@ t_cost	new_reverse_rotate(t_cost a, t_cost b)
 		final.times_s = b.times_f - a.times_f;
 	}
 	else
+	{
+		final.ins_s = 0;
 		final.times_s = 0;
+	}
+	final.error = 0;
 	return (final);
 }

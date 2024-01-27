@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:51:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 10:51:35 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 19:24:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ t_cost	to_top(long pos, long lstsize, char a)
 		else
 			cost.ins_f = RB;
 	}
+	cost.ins_s = 0;
+	cost.times_s = 0;
+	cost.error = 0;
 	return (cost);
 }

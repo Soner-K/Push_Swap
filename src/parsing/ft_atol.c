@@ -6,14 +6,18 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:00 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/12 12:31:02 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:37:11 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/*Transforming a string into a long, so that I can check later
-if the value returned is bigger/smaller than INT_MAX/INT_MIN.*/
+/**
+ * @brief Transforms a string into a long int.
+ * @param nptr The string to transform into an array.
+ * @returns The long int resulting in the transofrmation.
+ * If the conversion failed, returns 0 (NO_CONVERSION).
+ */
 long	ft_atol(const char *nptr)
 {
 	long	num;

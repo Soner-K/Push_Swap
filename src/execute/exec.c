@@ -6,35 +6,70 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:01:03 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 15:14:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 19:26:58 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /**
- * @brief Does swap (a or b) one time.
- * @param stack Address to the first node of a stack.
- * @param swap Function pointer to instructions that need only one stack
- * (ra, rb, rra, rrb, sa, sb).
+ * @brief Does the first part of the instructions.
+ * @param a Pointer to stack A's first node.
+ * @param b Pointer to stack B's first node.
+ * @param set The set of instructions to do.
  * @return void.
  */
-void	do_it_one(t_node **stack, t_exec_swap swap_one)
+void	do_it_first(t_node **a, t_node **b, t_cost set)
 {
-	swap_one(stack);
+	if (set.error == 1)
+		return ;
+	if (set.ins_f == RA)
+		while (set.times_f--)
+			ra(a);
+	if (set.ins_f == RB)
+		while (set.times_f--)
+			rb(b);
+	if (set.ins_f == RR)
+		while (set.times_f--)
+			rr(a, b);
+	if (set.ins_f == RRA)
+		while (set.times_f--)
+			rra(a);
+	if (set.ins_f == RRB)
+		while (set.times_f--)
+			rrb(b);
+	if (set.ins_f == RRR)
+		while (set.times_f--)
+			rrr(a, b);
 }
 
 /**
- * @brief Does the instruction passed as a function as long as times is not 0.
- * @param a Address to the first node of stack a.
- * @param b Address to the first node of stack b.
- * @param ins Function pointer to instructions that need two stacks
- * (rr, rrr, ss, pa and pb).
- * @param times Number of times to execute the instruction.
+ * @brief Does the second part of the instructions.
+ * @param a Pointer to stack A's first node.
+ * @param b Pointer to stack B's first node.
+ * @param set The set of instructions to do.
  * @return void.
  */
-void	do_it_two(t_node **a, t_node **b, t_exec ins, long times)
+void	do_it_second(t_node **a, t_node **b, t_cost set)
 {
-	while (times--)
-		ins(a, b);
+	if (set.error == 1)
+		return ;
+	if (set.ins_s == RA)
+		while (set.times_s--)
+			ra(a);
+	if (set.ins_s == RB)
+		while (set.times_s--)
+			rb(b);
+	if (set.ins_s == RR)
+		while (set.times_s--)
+			rr(a, b);
+	if (set.ins_s == RRA)
+		while (set.times_s--)
+			rra(a);
+	if (set.ins_s == RRB)
+		while (set.times_s--)
+			rrb(b);
+	if (set.ins_s == RRR)
+		while (set.times_s--)
+			rrr(a, b);
 }
