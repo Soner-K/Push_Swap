@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:51:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 19:24:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:48:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
  * @param pos Position in the stack of the value to put on top.
  * @param lstsize Stack's size.
  * @param a Binary indicating if the stack is a (1) or not (0).
- * @returns Structure containing the number and type of instructions needed.
+ * @returns Structure containing the type of instructions needed
+ * and how may times to do it.
  */
 t_cost	to_top(long pos, long lstsize, char a)
 {
