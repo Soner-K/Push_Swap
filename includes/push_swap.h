@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 18:26:20 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:57:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ typedef struct s_cost
 	char			error;
 }					t_cost;
 
+typedef struct s_sizes
+{
+	long			lstsize_a;
+	long			lstsize_b;
+}					t_sizes;
+
 typedef void		(*t_exec)(t_node **, t_node **);
 
 typedef void		(*t_exec_swap)(t_node **);
@@ -70,6 +76,7 @@ int					ft_strlen(char *s);
 int					len_tab(char **av);
 int					ft_strcmp(const char *s1, const char *s2);
 void				ft_putstr(char *s);
+int					min(int a, int b);
 
 void				play(int ac, char **av);
 
@@ -108,7 +115,14 @@ void				do_it_two(t_node **a, t_node **b, t_exec ins, long times);
 
 // algorithm
 long				find_pos_in_stack(t_node *lst, long value);
+long				find_max_pos(t_node *stack);
+long				find_min_pos(t_node *stack);
 void				sort_for_three(t_node **stack_a);
-t_cost				find_smallest_cost(t_node *stack_a, t_node *stack_b);
-long				find_closest_pos_b(int value, t_node *stack_b);
+t_cost				new_rotate(t_cost a, t_cost b);
+t_cost				new_reverse_rotate(t_cost a, t_cost b);
+t_cost				smallest_cost_to_b(t_node *a, t_node *b, t_sizes sizes);
+t_cost				smallest_cost_to_a(t_node *a, t_sizes sizes, long value);
+long				closest_smallest_in_b(int value, t_node *stack_b);
+long				closest_biggest_in_a(int value, t_node *stack_a);
+t_cost				to_top(long pos, long lstsize, char a);
 #endif

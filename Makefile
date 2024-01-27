@@ -26,6 +26,7 @@ SRC			= 	src/instructions/push.c \
 				src/utils/ft_lstfirst.c \
 				src/utils/create_and_sort.c \
 				src/utils/ft_putstr.c \
+				src/utils/min.c \
 				\
 				src/printing/print_list.c \
 				src/printing/visualize.c \
@@ -36,8 +37,11 @@ SRC			= 	src/instructions/push.c \
 				src/quicksort/quicksort.c \
 				\
 				src/sorting/alg_three.c \
-				src/sorting/smallest_cost.c \
-				src/sorting/find_pos_in_stack.c \
+				src/sorting/smallest_cost_to_b.c \
+				src/sorting/smallest_cost_to_a.c \
+				src/sorting/to_top.c \
+				src/sorting/find_positions.c \
+				src/sorting/adjusted_instructions.c \
 				# src/sorting/best_rotate.c \
 				# src/sorting/find_index_min.c \
 				# src/sorting/best_pairs.c \

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:12:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/26 18:26:14 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:05:28 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ static void	print_tab(int *tab, int last)
 
 void	play(int ac, char **av)
 {
-	t_node *stack_a;
-	t_node *stack_b;
-	t_cost smol;
-	char str[6];
-	char *str2;
+	t_node	*stack_a;
+	t_node	*stack_b;
+	t_cost	smol;
+	t_cost	last;
+	long	big;
+	t_sizes	sizes;
+	char	str[6];
+	char	*str2;
 
 	str2 = NULL;
 	stack_a = create_list(ac, av, 0);
@@ -98,12 +101,36 @@ void	play(int ac, char **av)
 		if (!check(str, "stop"))
 			break ;
 		execute(str, &stack_a, &stack_b);
+		sizes.lstsize_a = ft_lstsize(stack_a);
+		sizes.lstsize_b = ft_lstsize(stack_b);
 		ft_bzero(str, 4);
 		print_list(stack_a, stack_b);
-		smol = find_smallest_cost(stack_a, stack_b);
-		printf("Do instruction %d %d times\n", smol.ins_f, smol.times_f);
-		printf("Do instruction %d %d times\n", smol.ins_s, smol.times_s);
-		printf("closest pos %ld\n", find_closest_pos_b(stack_a->data, stack_b));
+		if (sizes.lstsize_a > 3)
+		{
+			smol = smallest_cost_to_b(stack_a, stack_b, sizes);
+			printf("Do instruction %d %d times\n", smol.ins_f, smol.times_f);
+			printf("Do instruction %d %d times\n", smol.ins_s, smol.times_s);
+			printf("closest pos %ld\n", closest_smallest_in_b(stack_a->data,
+					stack_b));
+		}
+		else
+		{
+			while (!check(str, "stop") && ft_lstsize(stack_b) != 0)
+			{
+				big = closest_biggest_in_a(stack_b->data, stack_a);
+				last = smallest_cost_to_a(stack_a, sizes, stack_b->data);
+				printf("pos of closest biggest for %ld is %ld\n", stack_b->data,
+					big);
+				printf("Do instruction %d %d times\n", last.ins_f,
+					last.times_f);
+				read(1, str, 4);
+				execute(str, &stack_a, &stack_b);
+				sizes.lstsize_a = ft_lstsize(stack_a);
+				str2 = ft_fuse(str2, str);
+				print_list(stack_a, stack_b);
+				ft_bzero(str, 4);
+			}
+		}
 	}
 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
 	printf("\nCOMMANDES :\n%s\n", str2);
@@ -112,6 +139,46 @@ void	play(int ac, char **av)
 	clear_list(&stack_a, 1);
 	clear_list(&stack_b, 0);
 }
+
+// void	play(int ac, char **av)
+// {
+// 	t_node *stack_a;
+// 	t_node *stack_b;
+// 	t_cost smol;
+// 	t_sizes	sizes;
+// 	char str[6];
+// 	char *str2;
+
+// 	str2 = NULL;
+// 	stack_a = create_list(ac, av, 0);
+// 	stack_b = NULL;
+// 	print_list(stack_a, NULL);
+// 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
+// 	printf("\n");
+// 	while (1)
+// 	{
+// 		sizes.lstsize_a = ft_lstsize(stack_a);
+// 		sizes.lstsize_b = ft_lstsize(stack_b);
+// 		read(1, str, 4);
+// 		str2 = ft_fuse(str2, str);
+// 		if (!check(str, "stop"))
+// 			break ;
+// 		execute(str, &stack_a, &stack_b);
+// 		ft_bzero(str, 4);
+// 		print_list(stack_a, stack_b);
+// 		smol = smallest_cost_to_b(stack_a, stack_b, sizes);
+// 		printf("Do instruction %d %d times\n", smol.ins_f, smol.times_f);
+// 		printf("Do instruction %d %d times\n", smol.ins_s, smol.times_s);
+// 		printf("closest pos %ld\n", closest_smallest_in_b(stack_a->data,
+// stack_b));
+// 	}
+// 	print_tab(stack_a->sorted, ft_lstsize(stack_a));
+// 	printf("\nCOMMANDES :\n%s\n", str2);
+// 	count(str2);
+// 	free(str2);
+// 	clear_list(&stack_a, 1);
+// 	clear_list(&stack_b, 0);
+// }
 
 int	main(int ac, char **av)
 {
