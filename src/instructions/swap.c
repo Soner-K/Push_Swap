@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:20:56 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:24:55 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:54:56 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @returns Returns 0 if stack's size is strictly less than 2.
  * Otherwise, returns 1 (the operation was successful).
  */
-static char	lst_swap(t_node **stack)
+char	lst_swap(t_node **stack)
 {
 	int	tmp;
 

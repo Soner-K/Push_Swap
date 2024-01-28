@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:19:45 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:24:39 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:54:51 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @returns Returns 0 if stack's size is strictly less than 2.
  * Returns 1 otherwise (the operation was successful).
  */
-static char	lst_reverse_rotate(t_node **stack)
+char	lst_reverse_rotate(t_node **stack)
 {
 	t_node	*last_prev;
 

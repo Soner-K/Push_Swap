@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:03:01 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:24:47 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:54:54 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @returns If there is no element in first, returns 0.
  * Returns 1 otherwise (the operation was successful).
  */
-static char	lst_rotate(t_node **stack)
+char	lst_rotate(t_node **stack)
 {
 	t_node	*first;
 

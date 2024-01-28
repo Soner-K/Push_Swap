@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 16:15:32 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:56:41 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_sizes
 // 						UTILS
 
 void				clear_list(t_node **lst);
+void				ft_bzero(void *s, size_t n);
 char				*ft_fuse(char *s1, char *s2);
 void				ft_lstadd_back(t_node **lst, t_node *new);
 void				ft_lstadd_front(t_node **lst, t_node *new);
@@ -77,26 +78,31 @@ long				len_strs(char **av);
 
 // 					INSTRUCTIONS
 
-// -> swap.c
-void				sa(t_node **first_a);
-void				sb(t_node **first_b);
-void				ss(t_node **first_a, t_node **first_b);
-
 // -> push.c
+char				lst_push(t_node **store, t_node **push);
 void				pa(t_node **store, t_node **push);
 void				pb(t_node **store, t_node **push);
 
+// -> reverse_rotate.c
+
+char				lst_reverse_rotate(t_node **stack);
+void				rra(t_node **first_node);
+void				rrb(t_node **first_node);
+void				rrr(t_node **first_a, t_node **first_b);
+
 // -> rotate.c
 
+char				lst_rotate(t_node **stack);
 void				ra(t_node **stack_a);
 void				rb(t_node **first_node);
 void				rr(t_node **first_a, t_node **first_b);
 
-// -> reverse_rotate.c
+// -> swap.c
 
-void				rra(t_node **first_node);
-void				rrb(t_node **first_node);
-void				rrr(t_node **first_a, t_node **first_b);
+char				lst_swap(t_node **stack);
+void				sa(t_node **first_a);
+void				sb(t_node **first_b);
+void				ss(t_node **first_a, t_node **first_b);
 
 // 						PARSING
 

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:12:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:18:24 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:54:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @returns  Returns 0 if there is no node in push.
  * Returns 1 otherwise (the operation was successful).
  */
-static char	lst_push(t_node **store, t_node **push)
+char	lst_push(t_node **store, t_node **push)
 {
 	t_node	*tmp;
 
