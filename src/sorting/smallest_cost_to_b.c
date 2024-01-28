@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:58:02 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 14:13:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 16:59:54 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,42 +19,6 @@ static void	set(t_cost *cost)
 	cost->ins_s = 0;
 	cost->times_f = 0;
 	cost->times_s = 0;
-}
-
-// protection ? pos et lstsize?
-// Attention au segfault si des valeurs ne sont pas init (normalement ok)
-/**
- * @brief Finds the cost (i.e which instruction to do and how many times)
- * for each node in stack A.
- * @param b Pointer to stack B's first node.
- * @param data_a The value for which to find the cost in stack A.
- * @param pos_a The position of data_a in stack A.
- * @param sizes A structure containing stack a's and stack b's sizes.
- * @returns The cheapest cost for data_a.
- */
-static t_cost	find_cost(t_node *b, long data_a, long pos_a, t_sizes sizes)
-{
-	t_cost	cost_a;
-	t_cost	cost_b;
-	t_cost	final;
-
-	set(&cost_a);
-	set(&cost_b);
-	set(&final);
-	cost_a = to_top(pos_a, sizes.lstsize_a, 1);
-	cost_b = to_top(closest_smallest_in_b(data_a, b), sizes.lstsize_b, 0);
-	if (cost_a.ins_f == RA && cost_b.ins_f == RB)
-		final = new_rotate(cost_a, cost_b);
-	else if (cost_a.ins_f == RRA && cost_b.ins_f == RRB)
-		final = new_reverse_rotate(cost_a, cost_b);
-	else
-	{
-		final.ins_f = cost_a.ins_f;
-		final.ins_s = cost_b.ins_f;
-		final.times_f = cost_a.times_f;
-		final.times_s = cost_b.times_f;
-	}
-	return (final);
 }
 
 /**
@@ -91,6 +55,40 @@ static long	closest_smallest_in_b(int value, t_node *stack_b)
 	if (pos == -1)
 		pos = find_max_pos(stack_b);
 	return (pos);
+}
+
+/**
+ * @brief Finds the cost (i.e which instruction to do and how many times)
+ * for each node in stack A.
+ * @param b Pointer to stack B's first node.
+ * @param data_a The value for which to find the cost in stack A.
+ * @param pos_a The position of data_a in stack A.
+ * @param sizes A structure containing stack a's and stack b's sizes.
+ * @returns The cheapest cost for data_a.
+ */
+static t_cost	find_cost(t_node *b, long data_a, long pos_a, t_sizes sizes)
+{
+	t_cost	cost_a;
+	t_cost	cost_b;
+	t_cost	final;
+
+	set(&cost_a);
+	set(&cost_b);
+	set(&final);
+	cost_a = to_top(pos_a, sizes.lstsize_a, 1);
+	cost_b = to_top(closest_smallest_in_b(data_a, b), sizes.lstsize_b, 0);
+	if (cost_a.ins_f == RA && cost_b.ins_f == RB)
+		final = new_rotate(cost_a, cost_b);
+	else if (cost_a.ins_f == RRA && cost_b.ins_f == RRB)
+		final = new_reverse_rotate(cost_a, cost_b);
+	else
+	{
+		final.ins_f = cost_a.ins_f;
+		final.ins_s = cost_b.ins_f;
+		final.times_f = cost_a.times_f;
+		final.times_s = cost_b.times_f;
+	}
+	return (final);
 }
 
 /**

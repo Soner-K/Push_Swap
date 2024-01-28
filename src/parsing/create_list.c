@@ -6,11 +6,17 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 14:04:13 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:00:08 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+static void	free_and_quit(char **strs)
+{
+	ft_clear(strs);
+	ft_quit();
+}
 
 /**
  * @brief Creates a stack, using the arguments given in the command line.
@@ -28,24 +34,23 @@ t_node	*create_list(int ac, char **av, int i)
 	char	**strs;
 
 	strs = ft_split((to_string(ac, av)), ' ');
-	if (!strs || ac == 1 || ft_error(strs))
+	if (!strs || ft_error(strs) || !ft_strlen(strs[0]))
 		ft_quit();
 	if (!strs[0])
-	{
-		ft_clear(strs);
-		ft_quit();
-	}
+		return (ft_clear(strs), NULL);
 	lst = ft_lstnew(ft_atol(strs[i++]));
 	if (!lst)
-	{
-		ft_clear(strs);
-		ft_quit();
-	}
+		free_and_quit(strs);
 	first = lst;
 	while (strs[i])
 	{
 		ft_lstadd_back(&lst, ft_lstnew(ft_atol(strs[i++])));
 		lst = lst->next;
+		if (!lst && strs[i])
+		{
+			clear_list(&first);
+			free_and_quit(strs);
+		}
 	}
 	return (lst->next = NULL, ft_clear(strs), first);
 }

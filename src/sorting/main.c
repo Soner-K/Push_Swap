@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 18:27:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 13:24:13 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 16:59:33 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int	main(int ac, char **av)
 	t_sizes		sizes;
 
 	stack_a = create_list(ac, av, 0);
-	if (!stack_a)
-		return (1);
-	if (ac <= 2 || is_sorted(stack_a))
+	if (!stack_a || ac == 2 || is_sorted(stack_a))
 		return (clear_list(&stack_a), 1);
 	stack_b = NULL;
 	sizes.lstsize_a = ft_lstsize(stack_a);

@@ -14,6 +14,7 @@ SRC			= 	src/execute/exec.c \
 				src/parsing/to_string.c \
 				\
 				src/utils/clear_list.c \
+				src/utils/ft_fuse.c \
 				src/utils/ft_lstadd_back.c \
 				src/utils/ft_lstadd_front.c \
 				src/utils/ft_lstlast.c \

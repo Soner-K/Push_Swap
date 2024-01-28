@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 14:24:45 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 16:15:32 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_sizes
 // 						UTILS
 
 void				clear_list(t_node **lst);
+char				*ft_fuse(char *s1, char *s2);
 void				ft_lstadd_back(t_node **lst, t_node *new);
 void				ft_lstadd_front(t_node **lst, t_node *new);
 t_node				*ft_lstlast(t_node *lst);
