@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:10:16 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 20:58:40 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:06:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	push_to_b(t_node **a, t_node **b, t_sizes *sizes)
 }
 
 /**
- * @brief Puts the minimum value in a given stack to the top.
+ * @brief Puts the minimum value in stack A to the top.
  * @param a Adress of the pointer to stack A's first node.
  * @param sizes A structure containing the sizes of stack A and B.
  * @returns void.

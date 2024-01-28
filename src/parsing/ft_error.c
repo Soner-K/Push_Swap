@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:19 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:01:53 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:00:50 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	only_digits(char *str)
  * @param tab A pointer to an array of strings.
  * @returns 1 if there is an error in the array, 0 otherwise.
  */
-char	error(char **tab)
+char	ft_error(char **tab)
 {
 	int	i;
 	int	j;
@@ -46,11 +46,11 @@ char	error(char **tab)
 		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN
 			|| (ft_atol(tab[i]) == NO_CONVERSION && tab[i][0] != '0')
 			|| !only_digits(tab[i]))
-			return (clear(tab), 1);
+			return (ft_clear(tab), 1);
 		while (tab[j])
 		{
 			if (ft_atol(tab[i]) == ft_atol(tab[j]))
-				return (clear(tab), 1);
+				return (ft_clear(tab), 1);
 			j++;
 		}
 		i++;

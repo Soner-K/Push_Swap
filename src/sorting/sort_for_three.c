@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   sort_for_three.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:58:05 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 20:38:08 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/24 14:17:35 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/28 14:11:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /**
- * @brief Sets to 0 n octets beginning at the adress of s.
- * @param s A pointer to any type of data.
- * @param n The number of octets to be put to 0.
+ * @brief Sorts a stack of size three. Can sort for for a size of two.
+ * @param a Adress of the pointer to the first node of stack A.
  * @returns void.
  */
-void	ft_bzero(void *s, size_t n)
+void	sort_for_three(t_node **a)
 {
-	unsigned char	*one_b;
+	char	pos_max;
 
-	if (s == NULL && n == 0)
-		return ;
-	one_b = s;
-	while (n--)
-	{
-		*one_b = 0;
-		one_b++;
-	}
+	pos_max = find_max_pos(*a);
+	if (pos_max == 0)
+		ra(a);
+	else if (pos_max == 1)
+		rra(a);
+	if ((*a)->data > (*a)->next->data)
+		sa(a);
 }

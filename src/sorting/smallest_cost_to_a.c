@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:27:36 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 19:32:52 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:13:55 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @returns The position of the closest biggest value's in stack B.
  * If there is none, returns the position of the max's value.
  */
-long	closest_biggest_in_a(int value, t_node *stack_a)
+static long	closest_biggest_in_a(int value, t_node *stack_a)
 {
 	long	diff;
 	long	pos;

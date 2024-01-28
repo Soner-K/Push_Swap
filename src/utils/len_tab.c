@@ -6,15 +6,15 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:18:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/09 19:51:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:24:27 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	len_tab(char **av)
+long	len_strs(char **av)
 {
-	int	i;
+	long	i;
 
 	i = 0;
 	if (!av || !av[0])

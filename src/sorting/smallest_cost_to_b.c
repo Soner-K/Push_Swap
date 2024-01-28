@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:58:02 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 20:15:33 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:13:05 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static t_cost	find_cost(t_node *b, long data_a, long pos_a, t_sizes sizes)
  * @returns The position of the closest smallest value's in stack B.
  * If there is none, returns the position of the max's value.
  */
-long	closest_smallest_in_b(int value, t_node *stack_b)
+static long	closest_smallest_in_b(int value, t_node *stack_b)
 {
 	long	diff;
 	t_node	*first;

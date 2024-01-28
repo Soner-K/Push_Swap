@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 21:34:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/28 14:04:13 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,17 @@ t_node	*create_list(int ac, char **av, int i)
 	char	**strs;
 
 	strs = ft_split((to_string(ac, av)), ' ');
-	if (!strs || !strs[0] || ac == 1 || error(strs))
+	if (!strs || ac == 1 || ft_error(strs))
 		ft_quit();
+	if (!strs[0])
+	{
+		ft_clear(strs);
+		ft_quit();
+	}
 	lst = ft_lstnew(ft_atol(strs[i++]));
 	if (!lst)
 	{
-		clear(strs);
+		ft_clear(strs);
 		ft_quit();
 	}
 	first = lst;
@@ -42,8 +47,5 @@ t_node	*create_list(int ac, char **av, int i)
 		ft_lstadd_back(&lst, ft_lstnew(ft_atol(strs[i++])));
 		lst = lst->next;
 	}
-	lst->next = NULL;
-	lst = first;
-	clear(strs);
-	return (lst);
+	return (lst->next = NULL, ft_clear(strs), first);
 }

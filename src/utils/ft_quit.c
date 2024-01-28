@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear.c                                            :+:      :+:    :+:   */
+/*   ft_quit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 12:29:48 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/27 20:30:57 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/01/27 21:27:53 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/01/28 13:32:15 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-/**
- * @brief Free an array of string(s) and the array.
- * @param tab The array of string(s) to be freed.
- * @returns void.
- */
-void	clear(char **tab)
+void	ft_quit(void)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab[i]);
-	free(tab);
+	write(2, "Error\n", 6);
+	exit(1);
 }
