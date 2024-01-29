@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 17:56:41 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:50:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 # define LONG_MAX 9223372036854775807
-# define NO_CONVERSION 0
+# define NO_CONVERSION -1
 
 # define SA 1
 # define SB 2

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:31:19 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 14:00:50 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:39:43 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	only_digits(char *str)
 	short int	i;
 
 	i = 0;
-	if (str[i] == '-')
+	if ((str[0] == '-' || str[0] == '+') && str[1])
 		i++;
 	while (str[i])
 	{
@@ -44,7 +44,7 @@ char	ft_error(char **tab)
 	while (tab[i])
 	{
 		if (ft_atol(tab[i]) > INT_MAX || ft_atol(tab[i]) < INT_MIN
-			|| (ft_atol(tab[i]) == NO_CONVERSION && tab[i][0] != '0')
+			|| (ft_atol(tab[i]) == NO_CONVERSION && tab[i][0] != '-')
 			|| !only_digits(tab[i]))
 			return (ft_clear(tab), 1);
 		while (tab[j])
