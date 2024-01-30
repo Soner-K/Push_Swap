@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 17:41:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 14:40:20 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:11:12 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../../includes/push_swap.h"
 
 void	execute(char *str, t_node **stack_a, t_node **stack_b);
-void	free_and_out(t_node **a, t_node **b, char quit);
+void	free_and_maybe_out(t_node **a, t_node **b, char quit);
 int		ft_check(char const *s, char c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*file_to_keep(int fd, char *keep, int *bytes_read);

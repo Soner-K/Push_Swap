@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 17:13:24 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 15:39:06 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:11:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	free_and_out(t_node **a, t_node **b, char quit)
+void	free_and_maybe_out(t_node **a, t_node **b, char quit)
 {
 	clear_list(a);
 	clear_list(b);
@@ -44,7 +44,7 @@ void	execute(char *str, t_node **stack_a, t_node **stack_b)
 		return (rra(stack_a, 0));
 	if (!ft_strcmp(str, "rrb\n"))
 		return (rrb(stack_b, 0));
-	return (free(str), free_and_out(stack_a, stack_b, 1));
+	return (free(str), free_and_maybe_out(stack_a, stack_b, 1));
 }
 
 int	ft_strcmp(const char *s1, const char *s2)

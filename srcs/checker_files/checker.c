@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:07:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 15:38:21 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:10:40 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	main(int ac, char **av)
 	}
 	if (str)
 		free(str);
-	if (is_sorted(stack_a))
+	if (is_sorted(stack_a) && !ft_lstsize(stack_b))
 		ft_putstr("OK\n", 1);
 	else
 		ft_putstr("KO\n", 1);
-	free_and_out(&stack_a, &stack_b, 0);
+	free_and_maybe_out(&stack_a, &stack_b, 0);
 	return (0);
 }

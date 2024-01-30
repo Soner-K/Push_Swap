@@ -57,19 +57,19 @@ CHECKER				=	checker
 all					:	$(NAME)
 
 %.o					:	%.c
-						@$(CC) $(CFLAGS) -c $< -o $@
+						$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)				:	$(SRC_OBJ) $(SRC_OBJ_MAIN)
-						@$(CC) -g $(CFLAGS) $^ -o $@
+						$(CC) -g $(CFLAGS) $^ -o $@
 
 bonus				:	$(SRC_OBJ) $(SRC_OBJ_BONUS)
-						@$(CC) -g $(CFLAGS) $^ -o $(CHECKER)
+						$(CC) -g $(CFLAGS) $^ -o $(CHECKER)
 
 clean				:
-						@rm -f $(SRC_OBJ) $(SRC_OBJ_BONUS) $(SRC_OBJ_MAIN) a.out *.o
+						rm -f $(SRC_OBJ) $(SRC_OBJ_BONUS) $(SRC_OBJ_MAIN) a.out *.o
 
 fclean				:	clean
-						@rm -f $(NAME) $(CHECKER) nowall
+						rm -f $(NAME) $(CHECKER) nowall
 
 tidy				:	$(NAME) clean
 
