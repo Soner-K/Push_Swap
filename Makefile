@@ -1,47 +1,50 @@
-SRC					= 	src/execute/exec.c \
+SRC					= 	srcs/push_swap/execute/exec.c \
 						\
-						src/instructions/push.c \
-						src/instructions/reverse_rotate.c \
-						src/instructions/rotate.c \
-						src/instructions/swap.c \
+						srcs/push_swap/instructions/push.c \
+						srcs/push_swap/instructions/reverse_rotate.c \
+						srcs/push_swap/instructions/rotate.c \
+						srcs/push_swap/instructions/swap.c \
 						\
-						src/parsing/create_list.c \
-						src/parsing/ft_atol.c \
-						src/parsing/ft_calloc.c \
-						src/parsing/ft_clear.c \
-						src/parsing/ft_error.c \
-						src/parsing/ft_split.c \
-						src/parsing/to_string.c \
+						srcs/push_swap/parsing/create_list.c \
+						srcs/push_swap/parsing/ft_atol.c \
+						srcs/push_swap/parsing/ft_calloc.c \
+						srcs/push_swap/parsing/ft_clear.c \
+						srcs/push_swap/parsing/ft_error.c \
+						srcs/push_swap/parsing/ft_split.c \
+						srcs/push_swap/parsing/to_string.c \
 						\
-						src/utils/clear_list.c \
-						src/utils/ft_bzero.c \
-						src/utils/ft_fuse.c \
-						src/utils/ft_lstadd_back.c \
-						src/utils/ft_lstadd_front.c \
-						src/utils/ft_lstlast.c \
-						src/utils/ft_lstnew.c \
-						src/utils/ft_lstsize.c \
-						src/utils/ft_min.c \
-						src/utils/ft_putstr.c \
-						src/utils/ft_quit.c \
-						src/utils/ft_strlen.c \
+						srcs/push_swap/utils/clear_list.c \
+						srcs/push_swap/utils/ft_bzero.c \
+						srcs/push_swap/utils/ft_fuse.c \
+						srcs/push_swap/utils/ft_lstadd_back.c \
+						srcs/push_swap/utils/ft_lstadd_front.c \
+						srcs/push_swap/utils/ft_lstlast.c \
+						srcs/push_swap/utils/ft_lstnew.c \
+						srcs/push_swap/utils/ft_lstsize.c \
+						srcs/push_swap/utils/ft_min.c \
+						srcs/push_swap/utils/ft_putstr.c \
+						srcs/push_swap/utils/ft_quit.c \
+						srcs/push_swap/utils/ft_strlen.c \
 						\
-						src/sorting/adjusted_instructions.c \
-						src/sorting/find_positions.c \
-						src/sorting/main.c \
-						src/sorting/smallest_cost_to_a.c \
-						src/sorting/smallest_cost_to_b.c \
-						src/sorting/sort_for_three.c \
-						src/sorting/sorting_alg.c \
-						src/sorting/to_top.c \
+						srcs/push_swap/sorting/adjusted_instructions.c \
+						srcs/push_swap/sorting/find_positions.c \
+						srcs/push_swap/sorting/smallest_cost_to_a.c \
+						srcs/push_swap/sorting/smallest_cost_to_b.c \
+						srcs/push_swap/sorting/sort_for_three.c \
+						srcs/push_swap/sorting/sorting_alg.c \
+						srcs/push_swap/sorting/to_top.c \
 
-SRC_BONUS			=	bonus/checker_utils.c \
-						bonus/checker.c \
-						bonus/get_next_line.c \
+SRC_BONUS			=	srcs/checker_files/checker_utils.c \
+						srcs/checker_files/checker.c \
+						srcs/checker_files/get_next_line.c \
+
+SRC_MAIN			=	srcs/push_swap/sorting/main.c
 
 SRC_OBJ				= 	$(SRC:.c=.o)
 
 SRC_OBJ_BONUS		= 	$(SRC_BONUS:.c=.o)
+
+SRC_OBJ_MAIN		=	$(SRC_MAIN:.c=.o)
 
 CC					=	cc
 
@@ -56,21 +59,20 @@ all					:	$(NAME)
 %.o					:	%.c
 						@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME)				:	$(SRC_OBJ)
+$(NAME)				:	$(SRC_OBJ) $(SRC_OBJ_MAIN)
 						@$(CC) -g $(CFLAGS) $^ -o $@
 
 bonus				:	$(SRC_OBJ) $(SRC_OBJ_BONUS)
 						@$(CC) -g $(CFLAGS) $^ -o $(CHECKER)
 
 clean				:
-						@rm -f $(SRC_OBJ) $(SRC_OBJ_BONUS) a.out *.o
+						@rm -f $(SRC_OBJ) $(SRC_OBJ_BONUS) $(SRC_OBJ_MAIN) a.out *.o
 
 fclean				:	clean
 						@rm -f $(NAME) $(CHECKER) nowall
 
 tidy				:	$(NAME) clean
 
-nowall				:	$(SRC_OBJ)
-						@$(CC) $^ -o $@ -g
+both				:	all bonus
 
 re					:	fclean all

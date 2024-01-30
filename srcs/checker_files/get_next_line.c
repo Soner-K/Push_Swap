@@ -6,11 +6,29 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 16:16:13 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/28 18:32:31 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:55:16 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+int	ft_check(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	if (s[0] == '\n')
+		return (1);
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (i);
+		i++;
+	}
+	return (0);
+}
 
 char	*file_to_keep(int fd, char *keep, int *bytes_read)
 {
@@ -98,7 +116,7 @@ char	*get_next_line(int fd, char binary)
 	static char	*keep;
 	int			bytes_read;
 
-	if (binary == 1)
+	if (binary == 1 && keep)
 	{
 		free(keep);
 		return (NULL);

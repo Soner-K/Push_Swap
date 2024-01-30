@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/29 17:50:24 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:12:48 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,29 +80,29 @@ long				len_strs(char **av);
 
 // -> push.c
 char				lst_push(t_node **store, t_node **push);
-void				pa(t_node **store, t_node **push);
-void				pb(t_node **store, t_node **push);
+void				pa(t_node **store, t_node **push, char show);
+void				pb(t_node **store, t_node **push, char show);
 
 // -> reverse_rotate.c
 
 char				lst_reverse_rotate(t_node **stack);
-void				rra(t_node **first_node);
-void				rrb(t_node **first_node);
-void				rrr(t_node **first_a, t_node **first_b);
+void				rra(t_node **first_node, char show);
+void				rrb(t_node **first_node, char show);
+void				rrr(t_node **first_a, t_node **first_b, char show);
 
 // -> rotate.c
 
 char				lst_rotate(t_node **stack);
-void				ra(t_node **stack_a);
-void				rb(t_node **first_node);
-void				rr(t_node **first_a, t_node **first_b);
+void				ra(t_node **stack_a, char show);
+void				rb(t_node **first_node, char show);
+void				rr(t_node **first_a, t_node **first_b, char show);
 
 // -> swap.c
 
 char				lst_swap(t_node **stack);
-void				sa(t_node **first_a);
-void				sb(t_node **first_b);
-void				ss(t_node **first_a, t_node **first_b);
+void				sa(t_node **first_a, char show);
+void				sb(t_node **first_b, char show);
+void				ss(t_node **first_a, t_node **first_b, char show);
 
 // 						PARSING
 
