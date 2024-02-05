@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:11:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 16:40:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:41:45 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ t_node	*create_list(int ac, char **av, int i)
 			free_and_quit(strs);
 		}
 	}
-	return (lst->next = NULL, ft_clear(strs), first);
+	return (ft_clear(strs), first);
 }

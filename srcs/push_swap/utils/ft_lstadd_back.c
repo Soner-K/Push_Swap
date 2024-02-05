@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:50:31 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 14:51:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:38:25 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_back(t_node **lst, t_node *new)
 {
+	if (!new)
+		return ;
 	if (!(*lst))
 	{
 		*lst = new;
