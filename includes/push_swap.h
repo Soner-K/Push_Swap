@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:07:26 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/01/30 14:12:48 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:45:55 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@
 typedef struct s_node
 {
 	long			data;
-	int				*sorted;
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
