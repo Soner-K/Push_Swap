@@ -48,28 +48,45 @@ SRC_OBJ_MAIN		=	$(SRC_MAIN:.c=.o)
 
 CC					=	cc
 
-CFLAGS				=	-Wall -Wextra -Werror
+CFLAGS				=	-Wall -Wextra -Werror -g3
 
 NAME				=	push_swap
 
 CHECKER				=	checker
 
+GREEN				= \033[32m
+
+BLUE				= \033[34m
+
+RED					= \033[31m
+
+YELLOW				= \033[33m
+
+COLOR_END			=	\033[0m
+
+
+
 all					:	$(NAME)
 
 %.o					:	%.c
-						$(CC) $(CFLAGS) -c $< -o $@
+						@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)				:	$(SRC_OBJ) $(SRC_OBJ_MAIN)
+						@echo "$(BLUE)Compiling main files...$(COLOR_END)"
 						$(CC) -g $(CFLAGS) $^ -o $@
+						@echo "$(GREEN)Main project successfully compiled. Have fun !$(COLOR_END)"
 
 bonus				:	$(SRC_OBJ) $(SRC_OBJ_BONUS)
-						$(CC) -g $(CFLAGS) $^ -o $(CHECKER)
-
+						@echo "$(BLUE)Compiling bonus files...$(COLOR_END)"
+						$(CC) $(CFLAGS) $^ -o $(CHECKER)
+						@echo "$(GREEN)Bonus project successfully compiled. Have fun !$(COLOR_END)"
 clean				:
 						rm -f $(SRC_OBJ) $(SRC_OBJ_BONUS) $(SRC_OBJ_MAIN) a.out *.o
+						@echo "$(RED)Object files removed$(COLOR_END)"
 
 fclean				:	clean
-						rm -f $(NAME) $(CHECKER) nowall
+						rm -f $(NAME) $(CHECKER)
+						@echo "$(RED)Executable files removed$(COLOR_END)"
 
 tidy				:	$(NAME) clean
 
