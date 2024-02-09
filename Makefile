@@ -93,3 +93,5 @@ tidy				:	$(NAME) clean
 both				:	all bonus
 
 re					:	fclean all
+
+.PHONY				:	all bonus clean fclean tidy both re
